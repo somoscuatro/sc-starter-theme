@@ -1,0 +1,52 @@
+# Dist folders
+dist
+src/blocks/**/fields.json
+
+# Env
+.env*
+!.env.example
+
+# Dependencies
+/vendor
+node_modules/
+
+# SQL dumps
+*.sql
+*.sqlite
+
+# Logs
+*.log
+*/debug.log
+php_errorlog
+
+# OS
+*.url
+*.lnk
+.DS*
+
+# Git
+.project
+.idea/
+.well-known
+/tags
+
+# Patch/diff artifacts
+*.diff
+*.orig
+*.rej
+interdiff*.txt
+
+# VS Code
+*code-workspace
+
+# VIM
+*.un~
+Session.vim
+.netrwhist
+*~
+*.swp
+.lvimrc
+
+# emacs artifacts
+*~
+\#*\#

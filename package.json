@@ -1,0 +1,10 @@
+{
+	"name": "@somoscuatro/sc-starter-theme",
+	"description": "A custom starter theme for WordPress projects.",
+	"version": "0.1.0",
+	"author": {
+		"name": "somoscuatro",
+		"email": "tech@somoscuatro.es",
+		"url": "https://somoscuatro.es"
+	},
+}
