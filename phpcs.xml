@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="WordPress Coding Standards" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+	<description>The Coding standard for the WordPress Coding Standards itself.</description>
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
+	<file>.</file>
+
+	<arg value="sp" />
+	<arg name="extensions" value="php" />
+	<arg name="basepath" value="." />
+	<arg name="parallel" value="8" />
+
+	<exclude-pattern>/bin/class-ruleset-test.php</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<rule ref="WordPress"></rule>
+	<!-- Exclude filename conventions for Visual Composer templates -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>*/vc_templates/*</exclude-pattern>
+	</rule>
+
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+	</rule>
+</ruleset>

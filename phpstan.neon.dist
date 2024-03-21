@@ -1,0 +1,15 @@
+parameters:
+	level: 4
+	phpVersion: 80100
+	bootstrapFiles:
+		- %rootDir%/../../php-stubs/wordpress-stubs/wordpress-stubs.php
+		- %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-stubs.php
+		- %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-commands-stubs.php
+		- %rootDir%/../../php-stubs/wp-cli-stubs/wp-cli-i18n-stubs.php
+		- %rootDir%/../../php-stubs/acf-pro-stubs/acf-pro-stubs.php
+		- %rootDir%/../../php-stubs/timber-stubs/timber-stubs.php
+	paths:
+		- wp-content/themes/somoscuatro
+	excludePaths:
+		- */vendor/*
+		- */node_modules/*
