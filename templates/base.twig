@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }} class="scroll-smooth">
+	<head>
+		{% block head %}
+			{% include 'head.twig' %}
+		{% endblock %}
+	</head>
+	<body {{ function('body_class') }}>
+		{{ function('wp_body_open') }}
+
+		{% block header %}
+			{% include 'site-header.twig' %}
+		{% endblock %}
+
+		{% block content %}
+			{% include 'main.twig' %}
+		{% endblock %}
+
+		{% block footer %}
+			{% include 'site-footer.twig' %}
+		{% endblock %}
+	</body>
+</html>
