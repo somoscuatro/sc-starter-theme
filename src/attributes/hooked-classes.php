@@ -7,6 +7,7 @@
 
 use Somoscuatro\Starter_Theme\Asset;
 use Somoscuatro\Starter_Theme\Media;
+use Somoscuatro\Starter_Theme\Timber;
 
 /**
  * List of classes with hooks
@@ -14,4 +15,5 @@ use Somoscuatro\Starter_Theme\Media;
 return array(
 	Asset::class,
 	Media::class,
+	Timber::class,
 );
