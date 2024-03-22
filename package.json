@@ -7,6 +7,11 @@
 		"email": "tech@somoscuatro.es",
 		"url": "https://somoscuatro.es"
 	},
+	"scripts": {
+		"dev": "npx mix watch",
+		"build": "npx mix build",
+		"build:prod": "npx mix --production"
+	},
 	"dependencies": {
 		"autoprefixer": "^10.4.19",
 		"laravel-mix": "^6.0.49",
