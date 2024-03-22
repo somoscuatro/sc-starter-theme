@@ -41,4 +41,19 @@ trait Filesystem {
 	protected function get_base_path(): string {
 		return dirname( __DIR__, 2 );
 	}
+
+	/**
+	 * Returns file last modified time.
+	 *
+	 * @param string $file_path The file path relative to dist folder.
+	 *
+	 * @return int File last modified time.
+	 */
+	protected function get_filemtime( string $file_path = '' ): int {
+		$version = $file_path
+			? filemtime( $this->get_base_path() . '/dist/' . trim( $file_path, '/' ) )
+			: filemtime( $this->get_base_path() . '/dist/' );
+
+		return (int) $version;
+	}
 }
