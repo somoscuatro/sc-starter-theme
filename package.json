@@ -9,6 +9,10 @@
 	},
 	"dependencies": {
 		"laravel-mix": "^6.0.49",
+		"postcss": "^8.4.38",
+		"postcss-extend": "^1.0.5",
+		"postcss-import": "^16.1.0",
+		"postcss-nesting": "^12.1.0",
 		"webpack": "^5.91.0"
 	}
 }
