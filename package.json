@@ -7,4 +7,7 @@
 		"email": "tech@somoscuatro.es",
 		"url": "https://somoscuatro.es"
 	},
+	"dependencies": {
+		"laravel-mix": "^6.0.49"
+	}
 }
