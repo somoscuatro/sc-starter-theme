@@ -7,6 +7,7 @@
 
 declare(strict_types=1);
 
+use Somoscuatro\Starter_Theme\CLI\CLI;
 use Somoscuatro\Starter_Theme\Attributes\Hook;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,3 +21,6 @@ require_once __DIR__ . '/autoload.php';
 
 // Register WordPress hooks.
 ( new Hook() )->register_hooks();
+
+// Register CLI commands.
+( new CLI() )->register_commands();
