@@ -68,10 +68,25 @@ class Timber {
 		// @phpstan-ignore-next-line
 		$twig->addFunction(
 			// @phpstan-ignore-next-line
+			new TwigFunction( 'enqueue_script', __CLASS__ . '::enqueue_script' )
+		);
+
+		// @phpstan-ignore-next-line
+		$twig->addFunction(
+			// @phpstan-ignore-next-line
 			new TwigFunction( 'get_static_asset', array( $this, 'get_static_asset' ) )
 		);
 
 		return $twig;
+	}
+
+	/**
+	 * Enqueue block scripts.
+	 *
+	 * @param string $handle The script handle.
+	 */
+	public static function enqueue_script( string $handle ): void {
+		wp_enqueue_script( $handle );
 	}
 
 	/**
