@@ -1,0 +1,16 @@
+{
+	"name": "acf/sample",
+	"title": "Sample",
+	"description": "A sample ACF Gutenberg Block.",
+	"category": "somoscuatro",
+	"icon": "",
+	"acf": {
+		"mode": "edit",
+		"renderCallback": "Somoscuatro\\Starter_Theme\\Blocks\\Sample\\Sample::render_callback"
+	},
+	"supports": {
+		"anchor": true,
+		"mode": false
+	},
+	"align": "full"
+}
