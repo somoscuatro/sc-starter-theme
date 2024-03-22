@@ -19,14 +19,14 @@ trait Filesystem {
 	 *
 	 * @var string
 	 */
-	private static string $base_url = '';
+	protected static string $base_url = '';
 
 	/**
 	 * Returns the base URL of this theme.
 	 *
 	 * @return string Return theme URI.
 	 */
-	private function get_base_url(): string {
+	protected function get_base_url(): string {
 		if ( ! self::$base_url ) {
 			self::$base_url = get_stylesheet_directory_uri();
 		}
@@ -34,11 +34,11 @@ trait Filesystem {
 	}
 
 	/**
-	 * The absolute filesystem base path of this plugin.
+	 * The absolute filesystem base path of this theme.
 	 *
 	 * @return string Return base path URI.
 	 */
-	private function get_base_path(): string {
+	protected function get_base_path(): string {
 		return dirname( __DIR__, 2 );
 	}
 }
