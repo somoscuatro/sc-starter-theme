@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-use Somoscuatro\Starter_Theme\Theme;
+use Somoscuatro\Starter_Theme\Attributes\Hook;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	// phpcs:ignore WordPress.Security.ValidatedSanitizedInput
@@ -18,4 +18,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Setup autoload.
 require_once __DIR__ . '/autoload.php';
 
-( new Theme() )->init();
+// Register WordPress hooks.
+( new Hook() )->register_hooks();
