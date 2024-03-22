@@ -7,7 +7,7 @@
 
 namespace Somoscuatro\Starter_Theme;
 
-use Somoscuatro\Starter_Theme\Attributes\Hook;
+use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Blocks\Loader as BlocksLoader;
 
 /**
@@ -25,8 +25,8 @@ class Theme {
 	/**
 	 * Initialisation method.
 	 */
+	#[Action( 'init' )]
 	public function init(): void {
-		( new Hook() )->register_hooks();
 		( new BlocksLoader() )->load();
 	}
 }
