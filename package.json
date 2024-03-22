@@ -8,6 +8,7 @@
 		"url": "https://somoscuatro.es"
 	},
 	"dependencies": {
-		"laravel-mix": "^6.0.49"
+		"laravel-mix": "^6.0.49",
+		"webpack": "^5.91.0"
 	}
 }
