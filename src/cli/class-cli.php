@@ -19,6 +19,7 @@ class CLI {
 		// phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		/** @disregard P1011 */
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {
+			\WP_CLI::add_command( 'export-acf-blocks-fields', __NAMESPACE__ . '\Commands\Export_Acf_Blocks_Fields' );
 		}
 	}
 }
