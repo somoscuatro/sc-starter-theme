@@ -2,7 +2,7 @@
 /**
  * Theme's main functionality methods.
  *
- * @package somoscuatro-theme
+ * @package sc-starter-theme
  */
 
 namespace Somoscuatro\Starter_Theme;

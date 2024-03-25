@@ -2,7 +2,7 @@
 /**
  * Block's main functionality methods.
  *
- * @package somoscuatro-theme
+ * @package sc-starter-theme
  */
 
 declare(strict_types=1);
