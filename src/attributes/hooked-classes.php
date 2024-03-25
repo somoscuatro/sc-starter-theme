@@ -5,6 +5,7 @@
  * @package sc-starter-theme
  */
 
+use Somoscuatro\Starter_Theme\Acf;
 use Somoscuatro\Starter_Theme\Asset;
 use Somoscuatro\Starter_Theme\Media;
 use Somoscuatro\Starter_Theme\Theme;
@@ -17,6 +18,7 @@ use Somoscuatro\Starter_Theme\Translation;
 return array(
 	Theme::class,
 
+	Acf::class,
 	Asset::class,
 	Media::class,
 	Timber::class,
