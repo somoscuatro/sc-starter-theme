@@ -20,6 +20,22 @@ use WP_Block_Editor_Context;
 class Loader {
 
 	/**
+	 * The theme prefix.
+	 *
+	 * @var string
+	 */
+	protected string $theme_prefix;
+
+	/**
+	 * The class constructor.
+	 *
+	 * @param string $theme_prefix The theme prefix.
+	 */
+	public function __construct( $theme_prefix ) {
+		$this->theme_prefix = $theme_prefix;
+	}
+
+	/**
 	 * Loads custom Gutenberg blocks.
 	 */
 	public function load(): void {
@@ -38,7 +54,7 @@ class Loader {
 
 			$full_class_path = sprintf( __NAMESPACE__ . '\%s\%s', $class, $class );
 			if ( method_exists( $full_class_path, 'init' ) ) {
-				( new $full_class_path() )->init();
+				( new $full_class_path() )->init( $this->theme_prefix );
 			}
 		}
 	}
@@ -60,7 +76,7 @@ class Loader {
 			array(
 				array(
 					'slug'  => 'somoscuatro',
-					'title' => esc_html__( 'Somoscuatro Custom Blocks', 'somoscuatro-theme' ),
+					'title' => esc_html__( 'Somoscuatro Custom Blocks', 'sc-starter-theme' ),
 				),
 			)
 		);
