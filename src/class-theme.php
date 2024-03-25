@@ -36,6 +36,11 @@ class Theme {
 	}
 
 	/**
+	 * Registers theme support for additional features.
 	 */
+	#[Action( 'after_setup_theme' )]
+	public function theme_support(): void {
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
 	}
 }
