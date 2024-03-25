@@ -10,6 +10,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/** Import files */
+@import "./global/_typo.css";
+
 /** Import Tailwind CSS Config */
 /* stylelint-disable-next-line at-rule-no-unknown */
 @config "../../tailwind.config.js";
