@@ -51,6 +51,34 @@ class Timber {
 	public function add_to_global_context( array $context ): array {
 		$context['homepage_url'] = get_home_url();
 
+		$context = $this->get_menus( $context );
+
+		return $context;
+	}
+
+	/**
+	 * Adds registered menus to Timber global context.
+	 *
+	 * As documented in
+	 * https://timber.github.io/docs/v2/guides/menus/#set-up-all-menus-globally
+	 * Timber allows to add the registered menu to the global context. For unknown
+	 * reasons, this is not fully working for us since the current menu item is
+	 * not set (always false) and WordPress current item classes (e.g.
+	 * current-menu-item) are not added.
+	 *
+	 * @param array $context The Timber global context.
+	 *
+	 * @return array The updated Timber global context.
+	 */
+	public function get_menus( array $context ): array {
+		foreach ( array_keys( get_registered_nav_menus() ) as $location ) {
+			if ( ! has_nav_menu( $location ) ) {
+				continue;
+			}
+
+			$context[ $location ] = TimberLibrary::get_menu( $location );
+		}
+
 		return $context;
 	}
 
