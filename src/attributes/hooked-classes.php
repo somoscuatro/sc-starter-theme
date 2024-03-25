@@ -8,6 +8,7 @@
 use Somoscuatro\Starter_Theme\Acf;
 use Somoscuatro\Starter_Theme\Asset;
 use Somoscuatro\Starter_Theme\Media;
+use Somoscuatro\Starter_Theme\Navigation;
 use Somoscuatro\Starter_Theme\Theme;
 use Somoscuatro\Starter_Theme\Timber;
 use Somoscuatro\Starter_Theme\Translation;
@@ -21,6 +22,7 @@ return array(
 	Acf::class,
 	Asset::class,
 	Media::class,
+	Navigation::class,
 	Timber::class,
 	Translation::class,
 );
