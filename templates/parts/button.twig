@@ -1,0 +1,11 @@
+{% set attrType = {
+	primary: 'border-anti-flash-white-900 bg-anti-flash-white-900 text-anti-flash-white-100',
+	secondary: 'border-anti-flash-white-100 bg-anti-flash-white-100 text-anti-flash-white-900',
+	hollow_dark: 'border-anti-flash-white-900 text-anti-flash-white-900',
+	hollow_light: 'border-anti-flash-white-100 text-anti-flash-white-100',
+	link: 'border-none',
+} %}
+
+<a {{ id ? 'id="' ~ id ~ '"' }} href="{{ url }}" target="{{ target }}" {{ target == '_blank' ? 'rel="noopener"' }} class="border font-medium py-2 px-4 md:px-7 block max-w-fit {{ attrType[type] }} {{ classes }}" {{ attrs }}>
+	{{ title }}
+</a>
