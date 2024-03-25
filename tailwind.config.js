@@ -9,6 +9,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				jost: ["Jost", "Helvetica Neue", "Arial", "sans-serif"],
+				syne: ["Syne", "Helvetica Neue", "Arial", "sans-serif"],
+			},
 			colors: tailwindColorPalette,
 		},
 	},
