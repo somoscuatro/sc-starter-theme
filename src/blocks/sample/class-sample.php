@@ -35,7 +35,7 @@ class Sample extends Block {
 			'fields'   => array(
 				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_text',
-					'label'         => __( 'Sample Text', 'somoscuatro-theme' ),
+					'label'         => __( 'Sample Text', 'sc-starter-theme' ),
 					'name'          => static::$acf_block_prefix . '_text',
 					'type'          => 'text',
 					'required'      => 1,
