@@ -33,4 +33,9 @@ class Asset {
 	#[Action( 'admin_enqueue_scripts' )]
 	public function enqueue_admin_assets() {}
 
+	/**
+	 * Enqueues wp-login theme styles and scripts.
+	 */
+	#[Action( 'login_enqueue_scripts' )]
+	public function enqueue_login_assets() {}
 }
