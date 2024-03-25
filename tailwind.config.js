@@ -8,6 +8,19 @@ module.exports = {
 		"./assets/**/*.js",
 	],
 	theme: {
+		container: {
+			center: true,
+			screens: {
+				sm: "640px",
+				md: "768px",
+				lg: "1024px",
+				xl: "1280px",
+			},
+			padding: {
+				DEFAULT: "1rem",
+				"2xl": "0",
+			},
+		},
 		extend: {
 			fontFamily: {
 				jost: ["Jost", "Helvetica Neue", "Arial", "sans-serif"],
