@@ -23,6 +23,9 @@ class Asset {
 	 */
 	#[Action( 'wp_enqueue_scripts' )]
 	public function enqueue_assets(): void {
+		// Custom fonts.
+		wp_enqueue_style( Theme::PREFIX . '-fonts-preload', $this->get_base_url() . '/dist/styles/fonts.css', false, $this->get_filemtime( 'styles/fonts.css' ) );
+
 		// Theme styles.
 		wp_enqueue_style( Theme::PREFIX, $this->get_base_url() . '/dist/styles/main.css', array(), $this->get_filemtime( 'styles/main.css' ) );
 	}
