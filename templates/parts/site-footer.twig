@@ -1,3 +1,9 @@
-<footer></footer>
+<footer class="container py-8">
+	<p>&copy;
+		{{ now|date('Y') }}
+		{{ __('Starter Theme by', 'sc-starter-theme') }}
+		<a class="underline" href="https://somoscuatro.es">somoscuatro</a>
+	</p>
+</footer>
 
 {{ function('wp_footer') }}
