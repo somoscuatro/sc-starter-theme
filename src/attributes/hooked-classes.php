@@ -11,6 +11,7 @@ use Somoscuatro\Starter_Theme\Customizer;
 use Somoscuatro\Starter_Theme\GTM;
 use Somoscuatro\Starter_Theme\Media;
 use Somoscuatro\Starter_Theme\Navigation;
+use Somoscuatro\Starter_Theme\Performance;
 use Somoscuatro\Starter_Theme\Theme;
 use Somoscuatro\Starter_Theme\Timber;
 use Somoscuatro\Starter_Theme\Translation;
@@ -27,6 +28,7 @@ return array(
 	GTM::class,
 	Media::class,
 	Navigation::class,
+	Performance::class,
 	Timber::class,
 	Translation::class,
 );
