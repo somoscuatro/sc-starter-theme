@@ -30,7 +30,7 @@ class Theme {
 	 */
 	#[Action( 'init' )]
 	public function init(): void {
-		( new BlocksLoader() )->load();
+		( new BlocksLoader( self::PREFIX ) )->load();
 	}
 
 	/**

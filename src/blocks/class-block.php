@@ -19,6 +19,13 @@ use Timber\Timber;
 class Block {
 
 	/**
+	 * The theme prefix.
+	 *
+	 * @var string
+	 */
+	protected static $theme_prefix;
+
+	/**
 	 * The Timber context.
 	 *
 	 * @var array
@@ -35,9 +42,13 @@ class Block {
 	/**
 	 * Registers activation hook callback.
 	 *
+	 * @param string $theme_prefix The theme prefix.
+	 *
 	 * @implements register_activation_hook<Function>
 	 */
-	public function init() {
+	public function init( $theme_prefix ) {
+		static::$theme_prefix = $theme_prefix;
+
 		$this->register_acf_block();
 		$this->register_assets();
 
@@ -124,7 +135,7 @@ class Block {
 
 		$context['is_preview'] = $is_preview;
 
-		return apply_filters( Theme::PREFIX . '_block_context', $context, $block ) ?? $context;
+		return apply_filters( static::$theme_prefix . '_block_context', $context, $block ) ?? $context;
 	}
 
 	/**
