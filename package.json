@@ -39,6 +39,8 @@
 		"webpack": "^5.91.0"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^19.2.1",
+		"@commitlint/config-conventional": "^19.1.0",
 		"@wordpress/eslint-plugin": "^17.11.0",
 		"@wordpress/prettier-config": "^3.11.0",
 		"eslint": "^8.57.0",
