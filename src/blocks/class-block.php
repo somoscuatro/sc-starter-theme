@@ -40,6 +40,16 @@ class Block {
 	public static $acf_block_prefix = '';
 
 	/**
+	 * Class constructor.
+	 *
+	 * We set the constructor as final to prevent be overridden by child classes.
+	 * This is necessary to ensure safe usage of new static().
+	 *
+	 * @see https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static
+	 */
+	final public function __construct() { }
+
+	/**
 	 * Registers activation hook callback.
 	 *
 	 * @param string $theme_prefix The theme prefix.

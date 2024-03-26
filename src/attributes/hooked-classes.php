@@ -5,7 +5,7 @@
  * @package sc-starter-theme
  */
 
-use Somoscuatro\Starter_Theme\Acf;
+use Somoscuatro\Starter_Theme\ACF;
 use Somoscuatro\Starter_Theme\Asset;
 use Somoscuatro\Starter_Theme\Customizer;
 use Somoscuatro\Starter_Theme\GTM;
@@ -22,7 +22,7 @@ use Somoscuatro\Starter_Theme\Translation;
 return array(
 	Theme::class,
 
-	Acf::class,
+	ACF::class,
 	Asset::class,
 	Customizer::class,
 	GTM::class,
