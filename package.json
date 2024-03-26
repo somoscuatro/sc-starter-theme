@@ -10,7 +10,9 @@
 	"scripts": {
 		"dev": "npx mix watch",
 		"build": "npx mix build",
-		"build:prod": "npx mix --production"
+		"build:prod": "npx mix --production",
+		"lint:php": "composer lint",
+		"lint-fix:php": "composer lint:fix"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.19",
