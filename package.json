@@ -14,8 +14,14 @@
 		"lint:php": "composer lint",
 		"lint-fix:php": "composer lint:fix",
 		"lint:css": "stylelint --quiet-deprecation-warnings ./**/*.css",
+		"lint-fix:css": "prettier --write ./**/*.css",
 		"sniff": "pnpm run sniff:php",
 		"sniff:php": "composer sniff"
+	},
+	"lint-staged": {
+		"./**/*.{css}": [
+			"prettier --write"
+		]
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.19",
