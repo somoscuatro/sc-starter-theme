@@ -73,5 +73,4 @@ class Media {
 		add_image_size( 'xl@2x', 2048 );
 		add_image_size( 'xl@3x', 3072 );
 	}
-
 }

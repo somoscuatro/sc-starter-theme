@@ -127,5 +127,4 @@ class Timber {
 	public function get_static_asset( string $rel_file_path ): string {
 		return esc_url( get_stylesheet_directory_uri() ) . "/$rel_file_path";
 	}
-
 }
