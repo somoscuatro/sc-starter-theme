@@ -12,7 +12,9 @@
 		"build": "npx mix build",
 		"build:prod": "npx mix --production",
 		"lint:php": "composer lint",
-		"lint-fix:php": "composer lint:fix"
+		"lint-fix:php": "composer lint:fix",
+		"sniff": "pnpm run sniff:php",
+		"sniff:php": "composer sniff"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.19",
