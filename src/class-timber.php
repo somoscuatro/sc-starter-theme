@@ -88,20 +88,14 @@ class Timber {
 	 * @param TwigEnvironment $twig The Twig Environment.
 	 *
 	 * @return TwigEnvironment The modified Twig Environment.
-	 *
-	 * @phpstan-ignore-next-line
 	 */
 	#[Filter( 'timber/twig' )]
 	public function extend_timber_functions( TwigEnvironment $twig ): TwigEnvironment {
-		// @phpstan-ignore-next-line
 		$twig->addFunction(
-			// @phpstan-ignore-next-line
 			new TwigFunction( 'enqueue_script', __CLASS__ . '::enqueue_script' )
 		);
 
-		// @phpstan-ignore-next-line
 		$twig->addFunction(
-			// @phpstan-ignore-next-line
 			new TwigFunction( 'get_static_asset', array( $this, 'get_static_asset' ) )
 		);
 
