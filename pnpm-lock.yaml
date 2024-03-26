@@ -31,6 +31,9 @@ dependencies:
     version: 5.91.0(webpack-cli@4.10.0)
 
 devDependencies:
+  '@wordpress/prettier-config':
+    specifier: ^3.11.0
+    version: 3.11.0(prettier@3.2.5)
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
@@ -1754,6 +1757,15 @@ packages:
     dependencies:
       webpack-cli: 4.10.0(webpack@5.91.0)
     dev: false
+
+  /@wordpress/prettier-config@3.11.0(prettier@3.2.5):
+    resolution: {integrity: sha512-QBczBEPRzo6mMoZ7+jcICN+qEfIzP/emq7apeDcpZsSH2AI1sXdO8mYSlu4XaCOo3/wkMAiV0w2CRVwnSRkKHA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      prettier: '>=3'
+    dependencies:
+      prettier: 3.2.5
+    dev: true
 
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
