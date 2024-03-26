@@ -11,6 +11,10 @@
 	],
 	"minimum-stability": "dev",
 	"prefer-stable": true,
+	"scripts": {
+		"lint": "vendor/bin/phpcs --standard=phpcs.xml .",
+		"lint:fix": "vendor/bin/phpcbf --standard=phpcs.xml ."
+	},
 	"require-dev": {
 		"composer/composer": "^2.7",
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
