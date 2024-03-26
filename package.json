@@ -16,7 +16,8 @@
 		"lint:css": "stylelint --quiet-deprecation-warnings ./**/*.css",
 		"lint-fix:css": "prettier --write ./**/*.css",
 		"sniff": "pnpm run sniff:php",
-		"sniff:php": "composer sniff"
+		"sniff:php": "composer sniff",
+		"postinstall": "husky"
 	},
 	"lint-staged": {
 		"./**/*.{css}": [
@@ -35,6 +36,7 @@
 	},
 	"devDependencies": {
 		"@wordpress/prettier-config": "^3.11.0",
+		"husky": "^9.0.11",
 		"husky-init": "^8.0.0",
 		"lint-staged": "^15.2.2",
 		"prettier": "^3.2.5",
