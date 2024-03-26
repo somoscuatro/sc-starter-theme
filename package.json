@@ -30,6 +30,7 @@
 	"devDependencies": {
 		"@wordpress/prettier-config": "^3.11.0",
 		"husky-init": "^8.0.0",
+		"lint-staged": "^15.2.2",
 		"prettier": "^3.2.5",
 		"stylelint": "^16.3.0",
 		"stylelint-config-recommended": "^14.0.0"
