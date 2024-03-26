@@ -9,6 +9,7 @@ use Somoscuatro\Starter_Theme\ACF;
 use Somoscuatro\Starter_Theme\Asset;
 use Somoscuatro\Starter_Theme\Customizer;
 use Somoscuatro\Starter_Theme\GTM;
+use Somoscuatro\Starter_Theme\Gutenberg_Block;
 use Somoscuatro\Starter_Theme\Media;
 use Somoscuatro\Starter_Theme\Navigation;
 use Somoscuatro\Starter_Theme\Performance;
@@ -26,6 +27,7 @@ return array(
 	Asset::class,
 	Customizer::class,
 	GTM::class,
+	Gutenberg_Block::class,
 	Media::class,
 	Navigation::class,
 	Performance::class,
