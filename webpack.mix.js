@@ -1,13 +1,13 @@
-const fs = require("fs");
-const mix = require("laravel-mix");
+const fs = require('fs');
+const mix = require('laravel-mix');
 
-mix.setPublicPath("dist");
-mix.setResourceRoot("../");
+mix.setPublicPath('dist');
+mix.setResourceRoot('../');
 
-const fontsDir = "assets/fonts";
-const stylesDir = "assets/styles";
-const scriptsDir = "assets/scripts";
-const scriptsVendorDir = "assets/scripts/vendor";
+const fontsDir = 'assets/fonts';
+const stylesDir = 'assets/styles';
+const scriptsDir = 'assets/scripts';
+const scriptsVendorDir = 'assets/scripts/vendor';
 
 const discover = (dirs, type, excludedDirs = []) => {
 	let files = [];
@@ -19,8 +19,8 @@ const discover = (dirs, type, excludedDirs = []) => {
 				if (fs.statSync(nodePath).isFile()) {
 					if (
 						nodePath.endsWith(type) &&
-						!node.startsWith(".") &&
-						!node.startsWith("_")
+						!node.startsWith('.') &&
+						!node.startsWith('_')
 					) {
 						files.push(nodePath);
 					}
@@ -35,30 +35,30 @@ const discover = (dirs, type, excludedDirs = []) => {
 };
 
 if (fs.existsSync(fontsDir)) {
-	discover([fontsDir], ".woff2").forEach((file) => {
-		mix.copy(file, "dist/fonts");
+	discover([fontsDir], '.woff2').forEach((file) => {
+		mix.copy(file, 'dist/fonts');
 	});
 }
 
 if (fs.existsSync(scriptsVendorDir)) {
-	discover([scriptsVendorDir], ".js").forEach((file) => {
-		mix.copy(file, "dist/scripts/vendor");
+	discover([scriptsVendorDir], '.js').forEach((file) => {
+		mix.copy(file, 'dist/scripts/vendor');
 	});
 }
 
 if (fs.existsSync(scriptsDir)) {
-	discover(["src/blocks", scriptsDir], ".js", ["vendor"]).forEach((file) => {
-		mix.js(file, "scripts");
+	discover(['src/blocks', scriptsDir], '.js', ['vendor']).forEach((file) => {
+		mix.js(file, 'scripts');
 	});
 }
 
 if (fs.existsSync(stylesDir)) {
-	discover(["assets/styles"], ".css").forEach((file) => {
-		mix.postCss(file, "styles", [
-			require("postcss-import"),
-			require("postcss-extend"),
-			require("tailwindcss/nesting"),
-			require("tailwindcss"),
+	discover(['assets/styles'], '.css').forEach((file) => {
+		mix.postCss(file, 'styles', [
+			require('postcss-import'),
+			require('postcss-extend'),
+			require('tailwindcss/nesting'),
+			require('tailwindcss'),
 		]);
 	});
 }
