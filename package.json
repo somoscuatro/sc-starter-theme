@@ -24,7 +24,7 @@
 		"postinstall": "husky"
 	},
 	"lint-staged": {
-		"./**/*.{css}": [
+		"./**/*.{css,js}": [
 			"prettier --write"
 		]
 	},
