@@ -1,0 +1,6 @@
+<section class="{{ background ? 'bg-' ~ background : '' }} {{ section_classes }}" {{ block.anchor ? "id='" ~ block.anchor ~ "'" : '' }}>
+	<div class="section-container container py-10 md:py-20 {{ section_container_classes }}"> 
+		{% block section_content %}
+		{% endblock %}
+	</div>
+</section>
