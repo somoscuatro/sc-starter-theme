@@ -34,6 +34,12 @@ class Sample extends Block {
 			'title'    => __( 'Block: Sample', 'sc-starter-theme' ),
 			'fields'   => array(
 				array(
+					'key'   => 'field_' . self::$acf_block_prefix . '_image',
+					'label' => __( 'Image', 'sc-starter-theme' ),
+					'name'  => self::$acf_block_prefix . '_image',
+					'type'  => 'image',
+				),
+				array(
 					'key'           => 'field_' . static::$acf_block_prefix . '_heading',
 					'label'         => __( 'Heading', 'sc-starter-theme' ),
 					'name'          => static::$acf_block_prefix . '_heading',

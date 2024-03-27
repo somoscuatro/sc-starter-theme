@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sc-starter-theme\n"
-"POT-Creation-Date: 2024-03-27 17:58+0100\n"
+"POT-Creation-Date: 2024-03-27 18:22+0100\n"
 "PO-Revision-Date: 2015-06-19 15:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: somoscuatro\n"
@@ -25,14 +25,18 @@ msgid "Block: Sample"
 msgstr ""
 
 #: src/blocks/sample/class-sample.php:38
+msgid "Image"
+msgstr ""
+
+#: src/blocks/sample/class-sample.php:44
 msgid "Heading"
 msgstr ""
 
-#: src/blocks/sample/class-sample.php:46
+#: src/blocks/sample/class-sample.php:52
 msgid "Text"
 msgstr ""
 
-#: src/blocks/sample/class-sample.php:54
+#: src/blocks/sample/class-sample.php:60
 msgid "Button"
 msgstr ""
 

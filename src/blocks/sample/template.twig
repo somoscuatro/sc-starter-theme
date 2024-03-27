@@ -1,21 +1,28 @@
 {% extends "section.twig" %}
 
 {% block section_content %}
-	<div class="flex flex-col gap-4 max-w-prose">
-		<div class="flex flex-col gap-2">
-			<h2>{{ heading }}</h2>
-			{% if text %}
-				<p>{{ text }}</p>
+	<div class="flex gap-16">
+		<div class="flex flex-col gap-4 max-w-prose">
+			<div class="flex flex-col gap-2">
+				<h2>{{ heading }}</h2>
+				{% if text %}
+					<p>{{ text }}</p>
+				{% endif %}
+			</div>
+			{% if button %}
+				{% include 'button.twig' with {
+					classes: 'w-full',
+					title: button.title,
+					url: button.url,
+					target: button.target,
+					type: 'primary'
+				} %}
 			{% endif %}
 		</div>
-		{% if button %}
-			{% include 'button.twig' with {
-				classes: 'w-full',
-				title: button.title,
-				url: button.url,
-				target: button.target,
-				type: 'primary'
-			} %}
-		{% endif %}
+		{% include 'image.twig' with {
+			class: layout ? 'max-w-sm lg:max-w-2xl' : '',
+			image: image,
+			allowed_sizes: ['lg', 'xl'],
+		} %}
 	</div>
 {% endblock %}
