@@ -92,7 +92,7 @@ class Timber {
 	#[Filter( 'timber/twig' )]
 	public function extend_timber_functions( TwigEnvironment $twig ): TwigEnvironment {
 		$twig->addFunction(
-			new TwigFunction( 'enqueue_script', __CLASS__ . '::enqueue_script' )
+			new TwigFunction( 'enqueue_script', array( $this, 'enqueue_script' ) )
 		);
 
 		$twig->addFunction(
@@ -111,7 +111,7 @@ class Timber {
 	 *
 	 * @param string $handle The script handle.
 	 */
-	public static function enqueue_script( string $handle ): void {
+	public function enqueue_script( string $handle ): void {
 		wp_enqueue_script( $handle );
 	}
 
