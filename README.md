@@ -551,6 +551,8 @@ Translations file are stored in the `languages` folder.
 To create the necessary .po/.mo files for your theme's supported languages, we
 recommend using a tool like [POEdit](https://poedit.net/).
 
+This theme includes translations for Catalan, Italian and Spanish.
+
 ## Performance Improvements
 
 This theme applies several improvements to ensure top performance, implemented
