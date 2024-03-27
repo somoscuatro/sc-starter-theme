@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sc-starter-theme\n"
-"POT-Creation-Date: 2024-03-21 13:45+0100\n"
+"POT-Creation-Date: 2024-03-27 17:11+0100\n"
 "PO-Revision-Date: 2015-06-19 15:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: somoscuatro\n"
@@ -19,3 +19,115 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: *.min.js\n"
 "X-Poedit-SearchPathExcluded-2: vendor\n"
+
+#: src/blocks/sample/class-sample.php:34
+msgid "Block: Sample"
+msgstr ""
+
+#: src/blocks/sample/class-sample.php:38
+msgid "Heading"
+msgstr ""
+
+#: src/blocks/sample/class-sample.php:46
+msgid "Text"
+msgstr ""
+
+#: src/blocks/sample/class-sample.php:54
+msgid "Button"
+msgstr ""
+
+#: src/class-customizer.php:30
+msgid "Google Tag Manager"
+msgstr ""
+
+#: src/class-customizer.php:48
+msgid "GTM ID"
+msgstr ""
+
+#: src/class-gutenberg.php:39
+msgid "Somoscuatro Custom Blocks"
+msgstr ""
+
+#: src/class-navigation.php:22
+msgid "Site Header Primary"
+msgstr ""
+
+#: src/class-navigation.php:23
+msgid "Site Footer Primary"
+msgstr ""
+
+#: src/class-navigation.php:24
+msgid "Site Footer Legals"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:55
+msgid "Add New"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:56
+#: src/custom-taxonomies/class-custom-taxonomy.php:67
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:57
+msgid "Edit"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:58
+#: src/custom-taxonomies/class-custom-taxonomy.php:65
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:59
+#: src/custom-taxonomies/class-custom-taxonomy.php:68
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:60
+msgid "View"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:61
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:62
+#: src/custom-taxonomies/class-custom-taxonomy.php:61
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:63
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:64
+#, php-format
+msgid "No %s found in Trash"
+msgstr ""
+
+#: src/custom-post-types/class-custom-post-type.php:65
+#: src/custom-taxonomies/class-custom-taxonomy.php:63
+#: src/custom-taxonomies/class-custom-taxonomy.php:64
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: src/custom-taxonomies/class-custom-taxonomy.php:62
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: src/custom-taxonomies/class-custom-taxonomy.php:66
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: templates/parts/site-footer.twig:4
+msgid "Starter Theme by"
+msgstr ""
