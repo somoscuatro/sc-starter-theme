@@ -99,6 +99,10 @@ class Timber {
 			new TwigFunction( 'get_static_asset', array( $this, 'get_static_asset' ) )
 		);
 
+		$twig->addFunction(
+			new TwigFunction( 'get_image_srcset', array( $this, 'get_image_srcset' ) )
+		);
+
 		return $twig;
 	}
 
@@ -120,5 +124,74 @@ class Timber {
 	 */
 	public function get_static_asset( string $rel_file_path ): string {
 		return esc_url( get_stylesheet_directory_uri() ) . "/$rel_file_path";
+	}
+
+	/**
+	 * Gets images source sets.
+	 *
+	 * @param array        $sizes The WordPress image sizes.
+	 * @param array|string $allowed_sizes The image sizes to generate for this particular image.
+	 *
+	 * @return array The image source set.
+	 */
+	public function get_image_srcset( array $sizes, array|string $allowed_sizes = array( 'xs', 'sm', 'md', 'lg', 'xl' ) ): array {
+		$srcset = array();
+
+		if ( isset( $sizes['xl'] ) && in_array( 'xl', $allowed_sizes, true ) ) {
+			$srcset[] = array(
+				'srcset'    => $sizes['xl'],
+				'srcset@2x' => $sizes['xl@2x'],
+				'srcset@3x' => $sizes['xl@3x'],
+				'media'     => '(min-width: 1440px)',
+				'width'     => $sizes['xl-width'],
+				'height'    => $sizes['xl-height'],
+			);
+		}
+
+		if ( isset( $sizes['lg'] ) && in_array( 'lg', $allowed_sizes, true ) ) {
+			$srcset[] = array(
+				'srcset'    => $sizes['lg'],
+				'srcset@2x' => $sizes['lg@2x'],
+				'srcset@3x' => $sizes['lg@3x'],
+				'media'     => '(min-width: 1280px)',
+				'width'     => $sizes['lg-width'],
+				'height'    => $sizes['lg-height'],
+			);
+		}
+
+		if ( isset( $sizes['md'] ) && in_array( 'md', $allowed_sizes, true ) ) {
+			$srcset[] = array(
+				'srcset'    => $sizes['md'],
+				'srcset@2x' => $sizes['md@2x'],
+				'srcset@3x' => $sizes['md@3x'],
+				'media'     => '(min-width: 1024px)',
+				'width'     => $sizes['md-width'],
+				'height'    => $sizes['md-height'],
+			);
+		}
+
+		if ( isset( $sizes['sm'] ) && in_array( 'sm', $allowed_sizes, true ) ) {
+			$srcset[] = array(
+				'srcset'    => $sizes['sm'],
+				'srcset@2x' => $sizes['sm@2x'],
+				'srcset@3x' => $sizes['sm@3x'],
+				'media'     => '(min-width: 768px)',
+				'width'     => $sizes['sm-width'],
+				'height'    => $sizes['sm-height'],
+			);
+		}
+
+		if ( isset( $sizes['xs'] ) && in_array( 'xs', $allowed_sizes, true ) ) {
+			$srcset[] = array(
+				'srcset'    => $sizes['xs'],
+				'srcset@2x' => $sizes['xs@2x'],
+				'srcset@3x' => $sizes['xs@3x'],
+				'media'     => '',
+				'width'     => $sizes['xs-width'],
+				'height'    => $sizes['xs-height'],
+			);
+		}
+
+		return $srcset;
 	}
 }
