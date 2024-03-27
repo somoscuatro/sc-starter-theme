@@ -1,0 +1,133 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sc-starter-theme\n"
+"POT-Creation-Date: 2024-03-27 17:11+0100\n"
+"PO-Revision-Date: 2024-03-27 17:25+0100\n"
+"Last-Translator: somoscuatro <tech@somoscuatro.es>\n"
+"Language-Team: somoscuatro\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: *.min.js\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+
+#: src/blocks/sample/class-sample.php:34
+msgid "Block: Sample"
+msgstr "Bloque: Ejemplo"
+
+#: src/blocks/sample/class-sample.php:38
+msgid "Heading"
+msgstr "Título"
+
+#: src/blocks/sample/class-sample.php:46
+msgid "Text"
+msgstr "Texto"
+
+#: src/blocks/sample/class-sample.php:54
+msgid "Button"
+msgstr "Botón"
+
+#: src/class-customizer.php:30
+msgid "Google Tag Manager"
+msgstr "Google Tag Manager"
+
+#: src/class-customizer.php:48
+msgid "GTM ID"
+msgstr "GTM ID"
+
+#: src/class-gutenberg.php:39
+msgid "Somoscuatro Custom Blocks"
+msgstr "Somoscuatro Custom Blocks"
+
+#: src/class-navigation.php:22
+msgid "Site Header Primary"
+msgstr "Site Header Primary"
+
+#: src/class-navigation.php:23
+msgid "Site Footer Primary"
+msgstr "Site Footer Primary"
+
+#: src/class-navigation.php:24
+msgid "Site Footer Legals"
+msgstr "Site Footer Legals"
+
+#: src/custom-post-types/class-custom-post-type.php:55
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: src/custom-post-types/class-custom-post-type.php:56
+#: src/custom-taxonomies/class-custom-taxonomy.php:67
+#, php-format
+msgid "Add New %s"
+msgstr "Añadir nuevo %s"
+
+#: src/custom-post-types/class-custom-post-type.php:57
+msgid "Edit"
+msgstr "Editar"
+
+#: src/custom-post-types/class-custom-post-type.php:58
+#: src/custom-taxonomies/class-custom-taxonomy.php:65
+#, php-format
+msgid "Edit %s"
+msgstr "Editar %s"
+
+#: src/custom-post-types/class-custom-post-type.php:59
+#: src/custom-taxonomies/class-custom-taxonomy.php:68
+#, php-format
+msgid "New %s"
+msgstr "Nuevo %s"
+
+#: src/custom-post-types/class-custom-post-type.php:60
+msgid "View"
+msgstr "Ver"
+
+#: src/custom-post-types/class-custom-post-type.php:61
+#, php-format
+msgid "View %s"
+msgstr "Ver %s"
+
+#: src/custom-post-types/class-custom-post-type.php:62
+#: src/custom-taxonomies/class-custom-taxonomy.php:61
+#, php-format
+msgid "Search %s"
+msgstr "Buscar %s"
+
+#: src/custom-post-types/class-custom-post-type.php:63
+#, php-format
+msgid "No %s found"
+msgstr "Ningún %s encontrado"
+
+#: src/custom-post-types/class-custom-post-type.php:64
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Ningún %s encontrado en la papelera"
+
+#: src/custom-post-types/class-custom-post-type.php:65
+#: src/custom-taxonomies/class-custom-taxonomy.php:63
+#: src/custom-taxonomies/class-custom-taxonomy.php:64
+#, php-format
+msgid "Parent %s"
+msgstr "%s padre"
+
+#: src/custom-taxonomies/class-custom-taxonomy.php:62
+#, php-format
+msgid "All %s"
+msgstr "Todos los %s"
+
+#: src/custom-taxonomies/class-custom-taxonomy.php:66
+#, php-format
+msgid "Update %s"
+msgstr "Actualizar %s"
+
+#: templates/parts/site-footer.twig:4
+msgid "Starter Theme by"
+msgstr "Starter Theme por"
