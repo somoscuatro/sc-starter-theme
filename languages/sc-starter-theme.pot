@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sc-starter-theme\n"
-"POT-Creation-Date: 2024-03-27 17:11+0100\n"
+"POT-Creation-Date: 2024-03-27 17:58+0100\n"
 "PO-Revision-Date: 2015-06-19 15:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: somoscuatro\n"
@@ -58,6 +58,11 @@ msgstr ""
 
 #: src/class-navigation.php:24
 msgid "Site Footer Legals"
+msgstr ""
+
+#: src/class-theme.php:61
+#, php-format
+msgid "%s plugin is not installed. Please install the plugin to use the Somoscuatro Starter Theme."
 msgstr ""
 
 #: src/custom-post-types/class-custom-post-type.php:55

@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sc-starter-theme\n"
-"POT-Creation-Date: 2024-03-27 17:11+0100\n"
-"PO-Revision-Date: 2024-03-27 17:25+0100\n"
+"POT-Creation-Date: 2024-03-27 17:58+0100\n"
+"PO-Revision-Date: 2024-03-27 17:59+0100\n"
 "Last-Translator: somoscuatro <tech@somoscuatro.es>\n"
 "Language-Team: somoscuatro\n"
 "Language: es\n"
@@ -14,7 +14,9 @@ msgstr ""
 "X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: *.min.js\n"
@@ -59,6 +61,15 @@ msgstr "Site Footer Primary"
 #: src/class-navigation.php:24
 msgid "Site Footer Legals"
 msgstr "Site Footer Legals"
+
+#: src/class-theme.php:61
+#, php-format
+msgid ""
+"%s plugin is not installed. Please install the plugin to use the Somoscuatro "
+"Starter Theme."
+msgstr ""
+"El plugin %s no está instalado. Por favor, instale el plugin para utilizar "
+"Somoscuatro Starter Theme."
 
 #: src/custom-post-types/class-custom-post-type.php:55
 msgid "Add New"
