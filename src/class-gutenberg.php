@@ -1,6 +1,6 @@
 <?php
 /**
- * Gutenberg blocks customization.
+ * Gutenberg customization.
  *
  * @package sc-starter-theme
  */
@@ -15,9 +15,9 @@ use Somoscuatro\Starter_Theme\Attributes\Filter;
 use WP_Block_Editor_Context;
 
 /**
- * Gutenberg blocks customization.
+ * Gutenberg customization.
  */
-class Gutenberg_Block {
+class Gutenberg {
 
 	/**
 	 * Registers Gutenberg custom category.
