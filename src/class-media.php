@@ -53,24 +53,18 @@ class Media {
 	 */
 	#[Action( 'init' )]
 	public function register_image_sizes(): void {
-		add_image_size( 'xs', 60 );
-		add_image_size( 'xs@2x', 120 );
-		add_image_size( 'xs@3x', 180 );
+		$sizes = array(
+			'xs' => 60,
+			'sm' => 240,
+			'md' => 420,
+			'lg' => 680,
+			'xl' => 1024,
+		);
 
-		add_image_size( 'sm', 240 );
-		add_image_size( 'sm@2x', 480 );
-		add_image_size( 'sm@3x', 720 );
-
-		add_image_size( 'md', 420 );
-		add_image_size( 'md@2x', 840 );
-		add_image_size( 'md@3x', 1260 );
-
-		add_image_size( 'lg', 680 );
-		add_image_size( 'lg@2x', 1360 );
-		add_image_size( 'lg@3x', 2040 );
-
-		add_image_size( 'xl', 1024 );
-		add_image_size( 'xl@2x', 2048 );
-		add_image_size( 'xl@3x', 3072 );
+		foreach ( $sizes as $key => $value ) {
+			add_image_size( $key, $value );
+			add_image_size( sprintf( '%s@2x', $key ), $key, $value * 2 );
+			add_image_size( sprintf( '%s@3x', $key ), $key, $value * 3 );
+		}
 	}
 }
