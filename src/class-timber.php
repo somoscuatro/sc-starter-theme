@@ -137,59 +137,25 @@ class Timber {
 	public function get_image_srcset( array $sizes, array|string $allowed_sizes = array( 'xs', 'sm', 'md', 'lg', 'xl' ) ): array {
 		$srcset = array();
 
-		if ( isset( $sizes['xl'] ) && in_array( 'xl', $allowed_sizes, true ) ) {
-			$srcset[] = array(
-				'srcset'    => $sizes['xl'],
-				'srcset@2x' => $sizes['xl@2x'],
-				'srcset@3x' => $sizes['xl@3x'],
-				'media'     => '(min-width: 1440px)',
-				'width'     => $sizes['xl-width'],
-				'height'    => $sizes['xl-height'],
-			);
-		}
+		$min_widths = array(
+			'xl' => '1440px',
+			'lg' => '1280px',
+			'md' => '1024px',
+			'sm' => '768px',
+			'xs' => '',
+		);
 
-		if ( isset( $sizes['lg'] ) && in_array( 'lg', $allowed_sizes, true ) ) {
-			$srcset[] = array(
-				'srcset'    => $sizes['lg'],
-				'srcset@2x' => $sizes['lg@2x'],
-				'srcset@3x' => $sizes['lg@3x'],
-				'media'     => '(min-width: 1280px)',
-				'width'     => $sizes['lg-width'],
-				'height'    => $sizes['lg-height'],
-			);
-		}
-
-		if ( isset( $sizes['md'] ) && in_array( 'md', $allowed_sizes, true ) ) {
-			$srcset[] = array(
-				'srcset'    => $sizes['md'],
-				'srcset@2x' => $sizes['md@2x'],
-				'srcset@3x' => $sizes['md@3x'],
-				'media'     => '(min-width: 1024px)',
-				'width'     => $sizes['md-width'],
-				'height'    => $sizes['md-height'],
-			);
-		}
-
-		if ( isset( $sizes['sm'] ) && in_array( 'sm', $allowed_sizes, true ) ) {
-			$srcset[] = array(
-				'srcset'    => $sizes['sm'],
-				'srcset@2x' => $sizes['sm@2x'],
-				'srcset@3x' => $sizes['sm@3x'],
-				'media'     => '(min-width: 768px)',
-				'width'     => $sizes['sm-width'],
-				'height'    => $sizes['sm-height'],
-			);
-		}
-
-		if ( isset( $sizes['xs'] ) && in_array( 'xs', $allowed_sizes, true ) ) {
-			$srcset[] = array(
-				'srcset'    => $sizes['xs'],
-				'srcset@2x' => $sizes['xs@2x'],
-				'srcset@3x' => $sizes['xs@3x'],
-				'media'     => '',
-				'width'     => $sizes['xs-width'],
-				'height'    => $sizes['xs-height'],
-			);
+		foreach ( $min_widths as $image_size => $min_width ) {
+			if ( isset( $sizes[ $image_size ] ) && in_array( $image_size, $allowed_sizes, true ) ) {
+				$srcset[] = array(
+					'srcset'    => $sizes[ $image_size ],
+					'srcset@2x' => $sizes[ $image_size . '@2x' ],
+					'srcset@3x' => $sizes[ $image_size . '@3x' ],
+					'media'     => '(min-width: ' . $min_width . ')',
+					'width'     => $sizes[ $image_size . '-width' ],
+					'height'    => $sizes[ $image_size . '-height' ],
+				);
+			}
 		}
 
 		return $srcset;
