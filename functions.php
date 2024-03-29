@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 use Somoscuatro\Starter_Theme\CLI\CLI;
 use Somoscuatro\Starter_Theme\Attributes\Hook;
+use Somoscuatro\Starter_Theme\Dependency_Injection\Container as Dependencies;
+use Somoscuatro\Starter_Theme\Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	// phpcs:ignore WordPress.Security.ValidatedSanitizedInput
@@ -18,6 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Setup autoload.
 require_once __DIR__ . '/autoload.php';
+
+// Register dependencies.
+$dependencies = new Dependencies();
+$dependencies->add( 'Theme', fn ( $dependencies ) => new Theme( $dependencies ) );
 
 // Register WordPress hooks.
 ( new Hook() )->register_hooks();
