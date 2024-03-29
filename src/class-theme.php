@@ -13,6 +13,7 @@ use Somoscuatro\Starter_Theme\Attributes\Filter;
 use Somoscuatro\Starter_Theme\Blocks\Loader as BlocksLoader;
 use Somoscuatro\Starter_Theme\Custom_Post_Types\Loader as CustomPostTypeLoader;
 use Somoscuatro\Starter_Theme\Custom_Taxonomies\Loader as CustomTaxonomyLoader;
+use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
 
 /**
  * Main theme class.
@@ -25,6 +26,22 @@ class Theme {
 	 * @var string
 	 */
 	private $prefix = 'starter_theme';
+
+	/**
+	 * Dependencies container.
+	 *
+	 * @var Dependencies
+	 */
+	private $dependencies;
+
+	/**
+	 * Class constructor.
+	 *
+	 * @param Dependencies $dependencies Dependencies container.
+	 */
+	public function __construct( Dependencies $dependencies ) {
+		$this->dependencies = $dependencies;
+	}
 
 	/**
 	 * Initialisation method.
