@@ -28,7 +28,7 @@ $dependencies->add( 'Theme', fn ( $dependencies ) => new Theme( $dependencies ) 
 $dependencies->add( 'Timber', fn () => new Timber() );
 
 // Register WordPress hooks.
-( new Hook() )->register_hooks();
+( new Hook( $dependencies ) )->register_hooks();
 
 // Register CLI commands.
 ( new CLI() )->register_commands();
