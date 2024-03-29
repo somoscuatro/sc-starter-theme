@@ -24,16 +24,16 @@ class Theme {
 	 *
 	 * @var string
 	 */
-	const PREFIX = 'starter_theme';
+	private $prefix = 'starter_theme';
 
 	/**
 	 * Initialisation method.
 	 */
 	#[Action( 'init' )]
 	public function init(): void {
-		( new BlocksLoader( self::PREFIX ) )->load();
-		( new CustomPostTypeLoader( self::PREFIX ) )->load();
-		( new CustomTaxonomyLoader( self::PREFIX ) )->load();
+		( new BlocksLoader( $this->dependencies ) )->load();
+		( new CustomPostTypeLoader( $this->dependencies ) )->load();
+		( new CustomTaxonomyLoader( $this->dependencies ) )->load();
 	}
 
 	/**
@@ -94,5 +94,14 @@ class Theme {
 		}
 
 		return $classes;
+	}
+
+	/**
+	 * Returns the theme prefix.
+	 *
+	 * @return string Theme the prefix.
+	 */
+	public function get_prefix(): string {
+		return $this->prefix;
 	}
 }

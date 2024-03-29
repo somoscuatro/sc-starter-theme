@@ -57,6 +57,28 @@ class Timber {
 	}
 
 	/**
+	 * Returns Timber context.
+	 *
+	 * @return array
+	 */
+	public function context(): array {
+		return TimberLibrary::context();
+	}
+
+	/**
+	 * Renders a given template.
+	 *
+	 * @param string $template Template path.
+	 * @param array  $context  Context data.
+	 */
+	public function render(
+		string $template,
+		array $context = array(),
+	): void {
+		TimberLibrary::render( $template, $context );
+	}
+
+	/**
 	 * Adds registered menus to Timber global context.
 	 *
 	 * As documented in
