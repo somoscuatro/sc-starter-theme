@@ -9,9 +9,7 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme\Blocks;
 
-use Somoscuatro\Starter_Theme\Theme;
-
-use Timber\Timber;
+use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
 
 /**
  * Class for ACF Gutenberg Blocks.
@@ -19,11 +17,11 @@ use Timber\Timber;
 class Block {
 
 	/**
-	 * The theme prefix.
+	 * Dependencies container.
 	 *
-	 * @var string
+	 * @var Dependencies
 	 */
-	protected static $theme_prefix;
+	protected static $dependencies;
 
 	/**
 	 * The Timber context.
@@ -46,23 +44,24 @@ class Block {
 	 * This is necessary to ensure safe usage of new static().
 	 *
 	 * @see https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static
+	 *
+	 * @param Dependencies $dependencies Dependencies container.
 	 */
-	final public function __construct() { }
+	final public function __construct( Dependencies $dependencies ) {
+		static::$dependencies = $dependencies;
+
+		$timber        = $dependencies->get( 'Timber' );
+		$this->context = $timber->context();
+	}
 
 	/**
 	 * Registers activation hook callback.
 	 *
-	 * @param string $theme_prefix The theme prefix.
-	 *
 	 * @implements register_activation_hook<Function>
 	 */
-	public function init( $theme_prefix ) {
-		static::$theme_prefix = $theme_prefix;
-
+	public function init() {
 		$this->register_acf_block();
 		$this->register_assets();
-
-		$this->context = Timber::context();
 	}
 
 	/**
@@ -105,7 +104,7 @@ class Block {
 	 * @param boolean $is_preview True if in preview mode.
 	 */
 	public static function render_callback( array $block, string $content = '', $is_preview = false ) {
-		( new static() )->render( $block, $content, $is_preview );
+		( new static( static::$dependencies ) )->render( $block, $content, $is_preview );
 	}
 
 	/**
@@ -121,7 +120,8 @@ class Block {
 		$block_dirname       = strtolower( explode( '\\', $block['render_callback'] )[3] );
 		$block_template_path = __DIR__ . '/' . str_replace( '_', '-', $block_dirname ) . '/template.twig';
 
-		Timber::render( $block_template_path, $this->context );
+		$timber = static::$dependencies->get( 'Timber' );
+		$timber->render( $block_template_path, $this->context );
 	}
 
 	/**
@@ -145,7 +145,9 @@ class Block {
 
 		$context['is_preview'] = $is_preview;
 
-		return apply_filters( static::$theme_prefix . '_block_context', $context, $block ) ?? $context;
+		$theme = static::$dependencies->get( 'Theme' );
+
+		return apply_filters( $theme->get_prefix() . '_block_context', $context, $block ) ?? $context;
 	}
 
 	/**
