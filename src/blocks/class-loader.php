@@ -11,8 +11,6 @@ namespace Somoscuatro\Starter_Theme\Blocks;
 
 use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
 
-use WP_Block_Editor_Context;
-
 /**
  * Gutenberg Blocks loader.
  */
