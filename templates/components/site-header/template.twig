@@ -1,10 +1,12 @@
+{% set nav_items = nav_items ? nav_items : site_header_primary.get_items %}
+
 <header class="container flex items-center justify-between py-8">
 	<h1>
 		<a href="{{ homepage_url }}">{{ site.title }}</a>
 	</h1>
 	<nav class="hidden gap-none xl:gap-6 lg:flex">
 		<ul>
-			{% for item in site_header_primary.get_items %}
+			{% for item in nav_items %}
 				<li>
 					<a class="underline" href="{{ item.url }}">{{ item.title }}</a>
 				</li>

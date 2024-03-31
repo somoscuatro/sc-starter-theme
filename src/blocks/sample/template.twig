@@ -10,7 +10,7 @@
 				{% endif %}
 			</div>
 			{% if button %}
-				{% include 'button.twig' with {
+				{% include 'button/template.twig' with {
 					classes: 'w-full',
 					title: button.title,
 					url: button.url,
@@ -19,10 +19,12 @@
 				} %}
 			{% endif %}
 		</div>
-		{% include 'image.twig' with {
-			class: layout ? 'max-w-sm lg:max-w-2xl' : '',
-			image: image,
-			allowed_sizes: ['lg', 'xl'],
-		} %}
+		{% if image %}
+			{% include 'image/template.twig' with {
+				class: layout ? 'max-w-sm lg:max-w-2xl' : '',
+				image: image,
+				allowed_sizes: ['lg', 'xl'],
+			} %}
+		{% endif %}
 	</div>
 {% endblock %}

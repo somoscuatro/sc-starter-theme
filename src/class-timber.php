@@ -36,6 +36,7 @@ class Timber {
 
 		TimberLibrary::$dirname = array(
 			'templates',
+			'templates/components',
 			'templates/parts',
 		);
 	}
@@ -52,6 +53,15 @@ class Timber {
 		$context['homepage_url'] = get_home_url();
 
 		$context = $this->get_menus( $context );
+
+		$context['wp_footer_exists'] = function_exists( 'wp_footer' );
+
+		$context['copyright_text'] = sprintf(
+			'&copy;%s %s %s',
+			gmdate( 'Y' ),
+			__( 'Starter Theme by', 'sc-starter-theme' ),
+			'<a class="underline" href="https://somoscuatro.es">somoscuatro</a>'
+		);
 
 		return $context;
 	}

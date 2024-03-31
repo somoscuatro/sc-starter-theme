@@ -1,12 +1,12 @@
-{% if image.url starts with 'https://fakeimg.pl' %}
-	<img {{ class ? 'class="' ~ class ~ '"' : '' }} src="{{ image.url }}" alt="{{ image.alt }}" width="{{ width }}" height="{{ height }}"/>
+{% if image.placeholder %}
+	<img {{ classes ? 'class="' ~ classes ~ '"' : '' }} src="{{ image.url }}" alt="{{ image.alt }}" width="{{ width }}" height="{{ height }}"/>
 {% else %}
 	{% set media_type = function('get_post_mime_type', image.id) %}
 
 	{% if media_type == 'image/svg+xml' or media_type == false %}
-		<img {{ class ? 'class="' ~ class ~ '"' : '' }} src="{{ image.url }}" alt="{{ image.alt }}" width="{{ width }}" height="{{ height }}"/>
+		<img {{ classes ? 'class="' ~ classes ~ '"' : '' }} src="{{ image.url }}" alt="{{ image.alt }}" width="{{ width }}" height="{{ height }}"/>
 	{% else %}
-		<picture {{ class ? 'class="' ~ class ~ '"' : '' }}>
+		<picture {{ classes ? 'class="' ~ classes ~ '"' : '' }}>
 			{% set sources = get_image_srcset(image.sizes|default([]), allowed_sizes|default([])) %}
 			{% for source in sources %}
 				{% set srcset = source.srcset ~	(source['srcset@2x'] ? ' 1x, ' ~ source['srcset@2x'] ~ ' 2x') ~ (source['srcset@3x'] ? ', ' ~ source['srcset@3x'] ~ ' 3x' : '') %}

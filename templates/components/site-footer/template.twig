@@ -1,0 +1,7 @@
+<footer class="container py-8">
+	<p>{{ copyright_text  }}</p>
+</footer>
+
+{% if wp_footer_exists %}
+	{{ function('wp_footer') }}
+{% endif %}
