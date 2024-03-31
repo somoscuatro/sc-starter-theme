@@ -441,7 +441,7 @@ For instance, if you want to include Alpine.js, your method would look like
 this:
 
 ```php
-public static function register_assets(): void {
+public function register_assets(): void {
   wp_register_script(
     'alpine',
     'https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js',
