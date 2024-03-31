@@ -26,7 +26,7 @@ class Gutenberg {
 	 * @param WP_Block_Editor_Context $block_editor_context The current block editor context.
 	 */
 	#[Filter( 'block_categories_all', accepted_args: 2 )]
-	public static function add_custom_block_category( array $block_categories, WP_Block_Editor_Context $block_editor_context ): array {
+	public function add_custom_block_category( array $block_categories, WP_Block_Editor_Context $block_editor_context ): array {
 		if ( ! ( $block_editor_context instanceof WP_Block_Editor_Context ) ) {
 			return $block_categories;
 		}
@@ -48,7 +48,7 @@ class Gutenberg {
 	 * @return array The modified allowed block types.
 	 */
 	#[Filter( 'allowed_block_types_all', accepted_args: 0 )]
-	public static function allowed_block_types(): array {
+	public function allowed_block_types(): array {
 		$block_types = \WP_Block_Type_Registry::get_instance()->get_all_registered();
 
 		// To disable the default WordPress Gutenberg blocks, include their names in
@@ -69,7 +69,7 @@ class Gutenberg {
 	 * blocks.
 	 */
 	#[Action( 'wp_enqueue_scripts' )]
-	public static function remove_default_blocks_assets(): void {
+	public function remove_default_blocks_assets(): void {
 		wp_dequeue_style( 'wp-block-library' );
 		wp_dequeue_script( 'wp-block-library' );
 	}
