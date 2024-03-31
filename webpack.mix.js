@@ -47,9 +47,11 @@ if (fs.existsSync(scriptsVendorDir)) {
 }
 
 if (fs.existsSync(scriptsDir)) {
-	discover(['src/blocks', scriptsDir], '.js', ['vendor']).forEach((file) => {
-		mix.js(file, 'scripts');
-	});
+	discover(['src/blocks', scriptsDir], '.js', ['vendor'])
+		.filter((file) => !file.endsWith('stories.js')) // Exclude files ending with 'stories.js'
+		.forEach((file) => {
+			mix.js(file, 'scripts');
+		});
 }
 
 if (fs.existsSync(stylesDir)) {
