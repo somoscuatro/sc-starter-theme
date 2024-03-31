@@ -469,12 +469,15 @@ In certain scenarios, you might find it necessary to augment or modify the
 global context of your block with additional data or to alter the information
 provided by Advanced Custom Fields (ACF).
 
-To achieve this, you should define a method within your block class named
-`set_custom_context`. This method will be responsible for receiving and
-processing the block's context along with any other settings from ACF. Here's a
-basic outline of how you can implement this method:
+To achieve this, you should define a method within your block class and
+[register it with filter](#wordpress-hooks-usage)
+`{theme_prefix}_block_context`, where `{theme_prefix}` is the machine name of
+your theme. This method will be responsible for receiving and processing the
+block's context along with any other settings from ACF. Here's a basic outline
+of how you can implement this method:
 
 ```php
+#[Filter('my_beautiful_theme_block_context'), accepted_args:2]
 public static function set_custom_context( array $context, array $block ): array {
   // Ensure we modify context just for this specific block.
   if ( 'acf/my-beautiful-block' !== $block['name'] ) {
