@@ -18,6 +18,7 @@ node_modules/
 *.log
 */debug.log
 php_errorlog
+*storybook.log
 
 # OS
 *.url
