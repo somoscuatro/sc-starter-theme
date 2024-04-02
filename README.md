@@ -159,6 +159,62 @@ files](https://developer.wordpress.org/coding-standards/wordpress-coding-standar
 Additionally, this autoloader invokes the Composer autoloader, guaranteeing that
 any third-party dependencies are also loaded automatically.
 
+### Dependency Injection
+
+The theme includes a basic implementation of a Dependency Injection Container
+that follows [the PSR-11 recommendation](https://www.php-fig.org/psr/psr-11/).
+
+To add a dependency to the Container you should use the method `add` that
+expects two parameters: a name for the dependency and a factory method.
+
+To use a dependency you need to retrieve with the method `get` using the name
+of the dependency.
+
+For example to add Class Settings as a dependency:
+
+```php
+// functions.php
+$dependencies = new Dependencies();
+$dependencies->add( 'Settings', fn() => new Settings() );
+```
+
+To use Class Settings in the Class Example:
+
+```php
+
+// class-example.php
+use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
+
+class Example {
+
+  /**
+   * Dependencies container.
+   *
+   * @var Dependencies
+   */
+  private $dependencies;
+
+  /**
+   * Class constructor.
+   *
+   * @param Dependencies $dependencies Dependencies container.
+   */
+  public function __construct( Dependencies $dependencies ) {
+    $this->dependencies = $dependencies;
+  }
+
+  /**
+   * An example method.
+   */
+  public function example_method(): void {
+    // Retrieve the Settings dependency.
+    $settings = $dependencies->get( 'Settings' );
+
+    // You can now access the methods and properties in Class Settings.
+  }
+}
+```
+
 ### WordPress Hooks Usage
 
 We utilize [methods
