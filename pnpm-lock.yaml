@@ -61,6 +61,12 @@ devDependencies:
   '@wordpress/prettier-config':
     specifier: ^3.11.0
     version: 3.11.0(prettier@3.2.5)
+  chromatic:
+    specifier: ^11.3.0
+    version: 11.3.0
+  dotenv-run-script:
+    specifier: ^0.4.1
+    version: 0.4.1
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
@@ -4239,6 +4245,19 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /chromatic@11.3.0:
+    resolution: {integrity: sha512-q1ZtJDJrjLGnz60ivpC16gmd7KFzcaA4eTb7gcytCqbaKqlHhCFr1xQmcUDsm14CK7JsqdkFU6S+JQdOd2ZNJg==}
+    hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.*.* || ^1.0.0
+      '@chromatic-com/playwright': ^0.*.* || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
+    dev: true
+
   /chrome-trace-event@1.0.3:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
@@ -5066,6 +5085,14 @@ packages:
   /dotenv-expand@5.1.0:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
     dev: false
+
+  /dotenv-run-script@0.4.1:
+    resolution: {integrity: sha512-5mHhOVcSMY7X9lC50xjJL2oKiW75gqvpZpUmJRrFMOAdbNZ+hk8z1wIG9Rh/noEzbgRqYd34EmOpbStc1d+GOg==}
+    hasBin: true
+    dependencies:
+      dotenv: 16.4.5
+      dotenv-expand: 10.0.0
+    dev: true
 
   /dotenv@10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
