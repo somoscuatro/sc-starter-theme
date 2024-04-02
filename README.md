@@ -11,6 +11,9 @@ utilizes [Tailwind CSS](https://tailwindcss.com/) for its modern and responsive
 styling capabilities. Additionally, it incorporates [Laravel
 Mix](https://laravel-mix.com/), a wrapper for easily defining
 [Webpack](https://webpack.js.org/) build steps and efficiently compile assets.
+Furthermore, the theme supports [Storybook](https://storybook.js.org/), a tool
+for developing UI components in isolation, which enhances the design system and
+facilitates a more interactive component library.
 
 **Key Features:**
 
@@ -22,6 +25,8 @@ Mix](https://laravel-mix.com/), a wrapper for easily defining
   CSS.
 - Assets Compilation: Simplify your assets management with Laravel Mix's
   straightforward Webpack wrapper.
+- Storybook Integration: Develop and test UI components in isolation and
+  checking them using Storybook interactive environment.
 
 ## Prerequisites
 
@@ -653,7 +658,6 @@ issues before runtime.
 In our roadmap for the theme's evolution, we plan to introduce the following
 features:
 
-- Integration with Storybook/Chromatic
 - TypeScript Adoption
 
 ## How to Contribute
