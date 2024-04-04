@@ -1,8 +1,8 @@
 {% extends "section.twig" %}
 
 {% block section_content %}
-	<div class="flex gap-16">
-		<div class="flex flex-col gap-4 max-w-prose">
+	<div class="flex flex-col gap-8 md:gap-16 md:flex-row">
+		<div class="flex flex-col gap-4 md:w-1/2 max-w-prose">
 			<div class="flex flex-col gap-2">
 				<h2>{{ heading }}</h2>
 				{% if text %}
@@ -21,7 +21,7 @@
 		</div>
 		{% if image %}
 			{% include 'image/template.twig' with {
-				class: layout ? 'max-w-sm lg:max-w-2xl' : '',
+				classes: 'md:w-1/2 object-cover',
 				image: image,
 				allowed_sizes: ['lg', 'xl'],
 			} %}
