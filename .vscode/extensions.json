@@ -1,0 +1,18 @@
+{
+	"recommendations": [
+		"bmewburn.vscode-intelephense-client",
+		"bradlc.vscode-tailwindcss",
+		"chouzz.vscode-better-align",
+		"christian-kohler.path-intellisense",
+		"csstools.postcss",
+		"davidanson.vscode-markdownlint",
+		"dbaeumer.vscode-eslint",
+		"dotjoshjohnson.xml",
+		"esbenp.prettier-vscode",
+		"heybourn.headwind",
+		"johnbillion.vscode-wordpress-hooks",
+		"mblode.twig-language-2",
+		"stylelint.vscode-stylelint",
+		"valeryanm.vscode-phpsab"
+	]
+}
