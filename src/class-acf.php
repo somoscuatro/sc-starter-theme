@@ -39,7 +39,7 @@ class ACF {
 	#[Action( 'init' )]
 	public function setup_color_palette(): void {
 		$this->acf_color_palette    = $this->get_color_palette();
-		$this->acf_bg_color_palette = $this->get_bg_safe_color_palette( $this->acf_color_palette, $this->get_safe_bg_colors_names() );
+		$this->acf_bg_color_palette = $this->get_bg_safe_color_palette( $this->acf_color_palette, $this->get_safe_bg_colors_names()['colors'] );
 	}
 
 	/**
@@ -82,11 +82,11 @@ class ACF {
 			array( 'associative' => true )
 		);
 
-		if ( ! isset( $safe_bg_colors['colors'] ) ) {
+		if ( ! isset( $safe_bg_colors ) ) {
 			return array();
 		}
 
-		return $safe_bg_colors['colors'];
+		return $safe_bg_colors;
 	}
 
 	/**
