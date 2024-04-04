@@ -155,9 +155,21 @@ class Block {
 
 		$context['is_preview'] = $is_preview;
 
-		$theme = static::$dependencies->get( 'Theme' );
+		return $this->set_custom_context( $context );
+	}
 
-		return apply_filters( $theme->get_prefix() . '_block_context', $context, $block ) ?? $context;
+	/**
+	 * Sets the custom context for the block.
+	 *
+	 * This method can be overridden in a particular block to modify the default
+	 * Timber context.
+	 *
+	 * @param array $context The Timber context.
+	 *
+	 * @return array The modified Timber context.
+	 */
+	public function set_custom_context( array $context ): array {
+		return $context;
 	}
 
 	/**
