@@ -45,7 +45,7 @@ class Customizer {
 				$wp_customize,
 				'gtm_id',
 				array(
-					'label'    => __( 'GTM ID', 'somoscuatro-theme' ),
+					'label'    => __( 'GTM ID', 'sc-starter-theme' ),
 					'section'  => 'gtm',
 					'settings' => 'gtm_id',
 					'type'     => 'text',
