@@ -49,8 +49,6 @@ class Theme {
 	#[Action( 'init' )]
 	public function init(): void {
 		( new BlocksLoader( $this->dependencies ) )->load();
-		( new CustomPostTypeLoader( $this->dependencies ) )->load();
-		( new CustomTaxonomyLoader( $this->dependencies ) )->load();
 	}
 
 	/**
@@ -60,6 +58,9 @@ class Theme {
 	public function theme_support(): void {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
+
+		( new CustomPostTypeLoader( $this->dependencies ) )->load();
+		( new CustomTaxonomyLoader( $this->dependencies ) )->load();
 	}
 
 	/**
