@@ -33,14 +33,21 @@ class Custom_Post_Type {
 	 *
 	 * @var array
 	 */
-	protected array $args = array(
-		'supports'           => array( 'title', 'editor', 'page-attributes' ),
-		'has_archive'        => true,
-		'hierarchical'       => true,
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_in_rest'       => false,
-	);
+	protected array $args = array();
+
+	/**
+	 * Class constructor.
+	 */
+	public function __construct() {
+		$this->args = array(
+			'supports'           => array( 'title', 'editor', 'page-attributes' ),
+			'has_archive'        => true,
+			'hierarchical'       => true,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_in_rest'       => false,
+		);
+	}
 
 	/**
 	 * Registers a Custom Post Type.

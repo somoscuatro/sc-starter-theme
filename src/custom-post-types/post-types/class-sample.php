@@ -34,6 +34,8 @@ class Sample extends Custom_Post_Type {
 	 * Class constructor.
 	 */
 	public function __construct() {
+		parent::__construct();
+
 		$args = array(
 			// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 			'menu_icon'    => 'data:image/svg+xml;base64,' . base64_encode(
@@ -44,6 +46,6 @@ class Sample extends Custom_Post_Type {
 			'show_in_rest' => true,
 		);
 
-		$this->args = wp_parse_args( $this->args, $args );
+		$this->args = wp_parse_args( $args, $this->args );
 	}
 }

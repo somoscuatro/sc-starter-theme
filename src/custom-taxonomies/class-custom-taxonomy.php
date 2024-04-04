@@ -40,13 +40,20 @@ class Custom_Taxonomy {
 	 *
 	 * @var array
 	 */
-	protected array $args = array(
-		'hierarchical'      => true,
-		'show_ui'           => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-	);
+	protected array $args = array();
+
+	/**
+	 * Class constructor.
+	 */
+	public function __construct() {
+		$this->args = array(
+			'hierarchical'      => true,
+			'show_ui'           => true,
+			'show_in_rest'      => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+		);
+	}
 
 	/**
 	 * Registers a custom Taxonomy.
