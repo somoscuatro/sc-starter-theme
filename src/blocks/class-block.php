@@ -49,17 +49,27 @@ class Block {
 	 */
 	final public function __construct( Dependencies $dependencies ) {
 		static::$dependencies = $dependencies;
-
-		$timber        = $dependencies->get( 'Timber' );
-		$this->context = $timber->context();
 	}
 
 	/**
 	 * Registers activation hook callback.
 	 *
-	 * @implements register_activation_hook<Function>
+	 * The Timber context is not yet fully ready when the class is instantiated
+	 * via the hooks loader with PHP Attributes.
+	 *
+	 * The hooks loader instantiates each class having hooks when looking for PHP
+	 * Action and Filter Attributes. This happens very early in the WordPress
+	 * loading process, before the Timber context is fully initialized.
+	 *
+	 * By the time the constructor is called, the Timber context is not yet fully
+	 * ready, so we CANNOT set the Timber context in the constructor.
+	 *
+	 * @see Somoscuatro\Theme\Attributes\Hook::register_hooks()
 	 */
 	public function init() {
+		$timber = static::$dependencies->get( 'Timber' );
+
+		$this->context = $timber->context();
 		$this->register_acf_block();
 		$this->register_assets();
 	}
