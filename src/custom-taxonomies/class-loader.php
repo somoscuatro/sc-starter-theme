@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Post Type Loader.
+ * Custom Taxonomy Loader.
  *
  * @package sc-starter-theme
  */
@@ -12,7 +12,7 @@ namespace Somoscuatro\Starter_Theme\Custom_Taxonomies;
 use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
 
 /**
- * Custom Post Type Loader.
+ * Custom Taxonomy Loader.
  */
 class Loader {
 
@@ -33,7 +33,7 @@ class Loader {
 	}
 
 	/**
-	 * Loads Custom Post Types.
+	 * Loads Custom Taxonomies.
 	 */
 	public function load(): void {
 		foreach ( glob( __DIR__ . '/taxonomies/*' ) as $cpt_file ) {
