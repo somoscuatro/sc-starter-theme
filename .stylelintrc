@@ -2,7 +2,12 @@
 	"extends": "stylelint-config-recommended",
 	"ignoreFiles": ["**/dist/**", "**/vendor/**"],
 	"rules": {
-		"at-rule-no-unknown": true,
+		"at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": ["extend"]
+			}
+		],
 		"color-hex-length": "short",
 		"color-named": "never",
 		"comment-empty-line-before": [
