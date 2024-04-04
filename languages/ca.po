@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sc-starter-theme\n"
-"POT-Creation-Date: 2024-03-27 18:22+0100\n"
-"PO-Revision-Date: 2024-03-27 18:24+0100\n"
+"POT-Creation-Date: 2024-04-04 13:04+0200\n"
+"PO-Revision-Date: 2024-04-04 13:05+0200\n"
 "Last-Translator: somoscuatro <tech@somoscuatro.es>\n"
 "Language-Team: somoscuatro\n"
 "Language: ca\n"
@@ -66,7 +66,7 @@ msgstr "Site Footer Primary"
 msgid "Site Footer Legals"
 msgstr "Site Footer Legals"
 
-#: src/class-theme.php:61
+#: src/class-theme.php:79
 #, php-format
 msgid ""
 "%s plugin is not installed. Please install the plugin to use the Somoscuatro "
@@ -74,6 +74,10 @@ msgid ""
 msgstr ""
 "El plugin %s no està instal·lat. Si us plau, instal·leu el plugin per "
 "utilitzar el Somoscuatro Starter Theme."
+
+#: src/class-timber.php:62
+msgid "Starter Theme by"
+msgstr "Starter Theme per"
 
 #: src/custom-post-types/class-custom-post-type.php:55
 msgid "Add New"
@@ -142,7 +146,3 @@ msgstr "Tots els %s"
 #, php-format
 msgid "Update %s"
 msgstr "Actualitzar %s"
-
-#: templates/parts/site-footer.twig:4
-msgid "Starter Theme by"
-msgstr "Starter Theme per"
