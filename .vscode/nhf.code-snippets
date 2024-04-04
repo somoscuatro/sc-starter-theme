@@ -1,0 +1,12 @@
+{
+  "PHP Attributes WP Filter": {
+      "prefix": "nhf",
+      "body": [
+          "#[Filter( '$1'${2:, priority: 10}${3:, accepted_args: 1} )]",
+          "public function $4($5) :${6:string} {",
+          "\t$7",
+          "}",
+      ],
+      "description": "Create a method hooked to a WordPress filter using PHP Attributes."
+  }
+}

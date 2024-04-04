@@ -1,0 +1,28 @@
+{
+  "PHP Theme Class": {
+      "prefix": "npc",
+      "body": [
+          "<?php",
+          "/**",
+          " * Contains Somoscuatro\\Starter_Theme\\\\$1${TM_FILENAME_BASE/(class-)?([^.-]+)|(-)/${2:/capitalize}/g}.",
+          " *",
+          " * @package sc-starter-theme",
+          " */",
+          "",
+          "declare(strict_types=1);",
+          "",
+          "namespace Somoscuatro\\Starter_Theme$2;",
+          "",
+          "/**",
+          " * $3",
+          " */",
+          "class ${TM_FILENAME_BASE/(class-)?([^.-]+)|(-)/${2:/capitalize}/g} {",
+          "",
+          "\t$5",
+          "}",
+          ""
+      ],
+      "description": "Create a new PHP theme class."
+  }
+}
+

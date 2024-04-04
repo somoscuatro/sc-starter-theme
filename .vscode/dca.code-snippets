@@ -1,0 +1,9 @@
+{
+  "Add Dependency": {
+      "prefix": "dca",
+      "body": [
+          "\\$dependencies->add( '$1', fn () => new $1() );",
+      ],
+      "description": "Add dependency to the Dependencies Container."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Get Dependency": {
+      "prefix": "dcg",
+      "body": [
+          "\\$dependencies->get( '$1' );",
+      ],
+      "description": "Get a dependency from the Dependencies Container."
+  }
+}
