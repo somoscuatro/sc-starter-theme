@@ -5,6 +5,8 @@
  * @package sc-starter-theme
  */
 
+declare(strict_types=1);
+
 namespace Somoscuatro\Starter_Theme;
 
 // Autoload Composer's dependencies.
