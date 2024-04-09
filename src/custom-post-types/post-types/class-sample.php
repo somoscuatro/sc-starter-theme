@@ -1,6 +1,6 @@
 <?php
 /**
- * Sample Custom Post Type functionality.
+ * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Post_Types\Samples Class.
  *
  * @package sc-starter-theme
  */
@@ -12,26 +12,26 @@ namespace Somoscuatro\Starter_Theme\Custom_Post_Types\Post_Types;
 use Somoscuatro\Starter_Theme\Custom_Post_Types\Custom_Post_Type;
 
 /**
- * Sample Custom Post Type functionality.
+ * Sample Custom Post Type Functionality.
  */
 class Sample extends Custom_Post_Type {
 
 	/**
-	 * Custom Post Type singular name.
+	 * Custom Post Type Singular Name.
 	 *
 	 * @var string
 	 */
 	protected string $singular_name = 'Sample';
 
 	/**
-	 * Custom Post Type plural name.
+	 * Custom Post Type Plural Name.
 	 *
 	 * @var string
 	 */
 	protected string $plural_name = 'Samples';
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 */
 	public function __construct() {
 		parent::__construct();

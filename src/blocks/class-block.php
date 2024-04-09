@@ -1,6 +1,6 @@
 <?php
 /**
- * Class for ACF Gutenberg Blocks.
+ * Contains Somoscuatro\Starter_Theme\Blocks\Block Class.
  *
  * @package sc-starter-theme
  */
@@ -26,28 +26,28 @@ class Block implements Block_Interface {
 	protected static $container;
 
 	/**
-	 * The Timber class.
+	 * The Timber Class.
 	 *
 	 * @var Timber
 	 */
 	protected static $timber;
 
 	/**
-	 * The Timber context.
+	 * The Timber Context.
 	 *
 	 * @var array
 	 */
 	protected $context = array();
 
 	/**
-	 * The prefix used for ACF Blocks.
+	 * The Prefix Used for ACF Blocks.
 	 *
 	 * @var string
 	 */
 	public static $acf_block_prefix = '';
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
 	 * @param Container $container The PHP DI Container.
 	 */
@@ -57,7 +57,7 @@ class Block implements Block_Interface {
 	}
 
 	/**
-	 * Registers activation hook callback.
+	 * Registers Activation Hook Callback.
 	 *
 	 * The Timber context is not yet fully ready when the class is instantiated
 	 * via the hooks loader with PHP Attributes.
@@ -78,7 +78,7 @@ class Block implements Block_Interface {
 	}
 
 	/**
-	 * Dummy method to get ACF Block fields.
+	 * Dummy Method to Get ACF Block Fields.
 	 *
 	 * This method needs to be overridden by each Gutenberg block class.
 	 */
@@ -98,12 +98,12 @@ class Block implements Block_Interface {
 	}
 
 	/**
-	 * Registers block assets.
+	 * Registers Block Assets.
 	 */
 	public function register_assets(): void {}
 
 	/**
-	 * Block render callback proxy.
+	 * Block Render Callback Proxy.
 	 *
 	 * In the block.json file for ACF, the renderCallback parameter has to be a
 	 * string that points to a callback. So, we need a static proxy method to take
@@ -121,7 +121,7 @@ class Block implements Block_Interface {
 	}
 
 	/**
-	 * Renders block Twig template.
+	 * Renders Block Twig Template.
 	 *
 	 * @param array   $block The Gutenberg block.
 	 * @param string  $content The content of the block.
@@ -137,7 +137,7 @@ class Block implements Block_Interface {
 	}
 
 	/**
-	 * Sets block context.
+	 * Sets Block Context.
 	 *
 	 * @param array   $context The Timber context.
 	 * @param array   $block The Gutenberg block.
@@ -161,27 +161,27 @@ class Block implements Block_Interface {
 	}
 
 	/**
-	 * Sets the custom context for the block.
+	 * Sets the Custom Context for the Block.
 	 *
 	 * This method can be overridden in a particular block to modify the default
 	 * Timber context.
 	 *
-	 * @param array $context The Timber context.
+	 * @param array $context The Timber Context.
 	 *
-	 * @return array The modified Timber context.
+	 * @return array The Modified Timber Context.
 	 */
 	public function set_custom_context( array $context ): array {
 		return $context;
 	}
 
 	/**
-	 * Adds ACF fields to Timber context.
+	 * Adds ACF Fields to Timber Context.
 	 *
-	 * @param string $block_prefix The ACF block prefix.
-	 * @param array  $context The Timber context.
-	 * @param array  $fields The ACF fields.
+	 * @param string $block_prefix The ACF Block Prefix.
+	 * @param array  $context The Timber Context.
+	 * @param array  $fields The ACF Fields.
 	 *
-	 * @return array The Timber context with ACF fields.
+	 * @return array The Timber Context with ACF Fields.
 	 */
 	public function add_acf_fields_to_context( string $block_prefix, array $context, array $fields ): array {
 		$unprefixed_acf_fields = json_decode( str_replace( $block_prefix . '_', '', wp_json_encode( $fields ) ), true );

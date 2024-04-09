@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress Theme Customizer functionality.
+ * Contains Somoscuatro\Starter_Theme\Customizer Class.
  *
  * @package sc-starter-theme
  */
@@ -12,14 +12,14 @@ namespace Somoscuatro\Starter_Theme;
 use Somoscuatro\Starter_Theme\Attributes\Action;
 
 /**
- * WordPress Theme Customizer functionality.
+ * WordPress Theme Customizer Functionality.
  */
 class Customizer {
 
 	/**
-	 * Adds Google Tag Manager controls to the customizer.
+	 * Adds Google Tag Manager Controls to the Customizer.
 	 *
-	 * @param \WP_Customize_Manager $wp_customize WP_Customize_Manager instance.
+	 * @param \WP_Customize_Manager $wp_customize WP_customize_manager Instance.
 	 */
 	#[Action( 'customize_register' )]
 	public function add_customizer_gtm_controls( \WP_Customize_Manager $wp_customize ) {

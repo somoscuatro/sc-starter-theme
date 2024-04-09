@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Taxonomy related functionality.
+ * Contains Somoscuatro\Starter_Theme\Custom_Taxonomies\Custom_Taxonomy Class.
  *
  * @package sc-starter-theme
  */
@@ -10,40 +10,40 @@ declare(strict_types=1);
 namespace Somoscuatro\Starter_Theme\Custom_Taxonomies;
 
 /**
- * Custom Taxonomy related functionality.
+ * Custom Taxonomy Related Functionality.
  */
 class Custom_Taxonomy {
 
 	/**
-	 * Taxonomy singular name.
+	 * Taxonomy Singular Name.
 	 *
 	 * @var string
 	 */
 	protected string $singular_name = '';
 
 	/**
-	 * Taxonomy plural name.
+	 * Taxonomy Plural Name.
 	 *
 	 * @var string
 	 */
 	protected string $plural_name = '';
 
 	/**
-	 * Custom Post Types using this taxonomy.
+	 * Custom Post Types Using This Taxonomy.
 	 *
 	 * @var array
 	 */
 	protected array $post_types = array();
 
 	/**
-	 * Custom Taxonomy default arguments.
+	 * Custom Taxonomy Default Arguments.
 	 *
 	 * @var array
 	 */
 	protected array $args = array();
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 */
 	public function __construct() {
 		$this->args = array(
@@ -56,7 +56,7 @@ class Custom_Taxonomy {
 	}
 
 	/**
-	 * Registers a custom Taxonomy.
+	 * Registers a Custom Taxonomy.
 	 *
 	 * See https://developer.wordpress.org/reference/functions/register_taxonomy/.
 	 */

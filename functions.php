@@ -1,6 +1,6 @@
 <?php
 /**
- * Initialize theme.
+ * Initialize Theme.
  *
  * @package sc-starter-theme
  */
@@ -18,14 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Setup autoload.
+// Setup Autoload.
 require_once __DIR__ . '/autoload.php';
 
-// Setup dependencies.
+// Setup Dependencies.
 $container = new Container();
 
-// Register WordPress hooks.
+// Register WordPress Hooks.
 ( new Hook( $container ) )->register_hooks();
 
-// Register CLI commands.
+// Register CLI Commands.
 ( new CLI( $container ) )->register_commands();

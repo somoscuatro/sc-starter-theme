@@ -1,6 +1,6 @@
 <?php
 /**
- * Sample Category custom Taxonomy.
+ * Contains Somoscuatro\Starter_Theme\Custom_Taxonomies\Taxonomies\Sample_Category Class.
  *
  * @package sc-starter-theme
  */
@@ -12,26 +12,26 @@ namespace Somoscuatro\Starter_Theme\Custom_Taxonomies\Taxonomies;
 use Somoscuatro\Starter_Theme\Custom_Taxonomies\Custom_Taxonomy;
 
 /**
- * Sample Category custom Taxonomy.
+ * Sample Category Custom Taxonomy.
  */
 class Sample_Category extends Custom_Taxonomy {
 
 	/**
-	 * Taxonomy singular name.
+	 * Taxonomy Singular Name.
 	 *
 	 * @var string
 	 */
 	protected string $singular_name = 'Sample Category';
 
 	/**
-	 * Taxonomy plural name.
+	 * Taxonomy Plural Name.
 	 *
 	 * @var string
 	 */
 	protected string $plural_name = 'Sample Categories';
 
 	/**
-	 * Custom Post Types using this taxonomy.
+	 * Custom Post Types Using This Taxonomy.
 	 *
 	 * @var array
 	 */

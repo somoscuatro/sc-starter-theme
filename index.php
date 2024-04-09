@@ -1,6 +1,6 @@
 <?php
 /**
- * The index template file.
+ * The Index Template File.
  *
  * @package sc-starter-theme
  */

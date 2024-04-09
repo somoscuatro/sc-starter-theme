@@ -1,6 +1,6 @@
 <?php
 /**
- * WP CLI Command to export ACF Fields Blocks to JSON file.
+ * Contains Somoscuatro\Starter_Theme\CLI\CLI_Command Class.
  *
  * @package sc-starter-theme
  */
@@ -12,23 +12,23 @@ namespace Somoscuatro\Starter_Theme\CLI;
 use Somoscuatro\Starter_Theme\Helpers\Filesystem;
 
 /**
- * WP CLI Command to export ACF Fields Blocks to JSON file.
+ * WP CLI Command to Export ACF Fields Blocks to JSON File.
  */
 abstract class CLI_Command extends \WP_CLI_Command {
 
 	use Filesystem;
 
 	/**
-	 * The Gutenberg Blocks base path.
+	 * The Gutenberg Blocks Base Path.
 	 *
 	 * @var string
 	 */
 	protected $blocks_base_path;
 
 	/**
-	 * Gets the root namespace.
+	 * Gets the Root Namespace.
 	 *
-	 * @return string The root namespace.
+	 * @return string The Root Namespace.
 	 */
 	protected function get_base_namespace(): string {
 		$namespace = explode( '\\', __NAMESPACE__ );

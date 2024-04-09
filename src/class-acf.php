@@ -1,6 +1,6 @@
 <?php
 /**
- * ACF custom functionality.
+ * Contains Somoscuatro\Starter_Theme\ACF Class.
  *
  * @package sc-starter-theme
  */
@@ -13,28 +13,28 @@ use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Helpers\Filesystem;
 
 /**
- * ACF custom functionality.
+ * ACF Custom Functionality.
  */
 class ACF {
 
 	use Filesystem;
 
 	/**
-	 * The ACF color palette.
+	 * The ACF Color Palette.
 	 *
 	 * @var array
 	 */
 	private $acf_color_palette = array();
 
 	/**
-	 * The allowed colors palette for ACF Block background.
+	 * The Allowed Colors Palette for ACF Block Background.
 	 *
 	 * @var array
 	 */
 	private $acf_bg_color_palette = array();
 
 	/**
-	 * ACF custom functionality.
+	 * ACF Custom Functionality.
 	 */
 	#[Action( 'init' )]
 	public function setup_color_palette(): void {
@@ -43,9 +43,9 @@ class ACF {
 	}
 
 	/**
-	 * Gets color palette from a JSON file.
+	 * Gets Color Palette from a JSON File.
 	 *
-	 * @return array The color palette file content.
+	 * @return array The Color Palette File Content.
 	 */
 	private function get_color_palette(): array {
 		if ( ! file_exists( $this->get_base_path() . '/tailwind.colors.json' ) ) {
@@ -68,9 +68,9 @@ class ACF {
 	}
 
 	/**
-	 * Gets the safe background colors name from Tailwind config JSON file.
+	 * Gets the Safe Background Colors Name from Tailwind Config JSON File.
 	 *
-	 * @return array The safe background colors name.
+	 * @return array The Safe Background Colors Name.
 	 */
 	private function get_safe_bg_colors_names(): array {
 		if ( ! file_exists( $this->get_base_path() . '/tailwind.bg-colors-safelist.json' ) ) {
@@ -90,12 +90,12 @@ class ACF {
 	}
 
 	/**
-	 * Reduces a given color palette to the background safe colors.
+	 * Reduces a Given Color Palette to the Background Safe Colors.
 	 *
-	 * @param array $color_palette The Tailwind color palette.
-	 * @param array $safe_bg_colors The safe background colors name.
+	 * @param array $color_palette The Tailwind Color Palette.
+	 * @param array $safe_bg_colors The Safe Background Colors Name.
 	 *
-	 * @return array The background safe color palette.
+	 * @return array The Background Safe Color Palette.
 	 */
 	private function get_bg_safe_color_palette( array $color_palette, array $safe_bg_colors ): array {
 		return array_filter(
@@ -108,7 +108,7 @@ class ACF {
 	}
 
 	/**
-	 * Restricts the ACF color picker palette.
+	 * Restricts the ACF Color Picker Palette.
 	 */
 	#[Action( 'acf/input/admin_footer' )]
 	public function restrict_color_picker_palette(): void {

@@ -1,6 +1,6 @@
 <?php
 /**
- * List of classes to be hooked.
+ * List of Classes to Be Hooked.
  *
  * @package sc-starter-theme
  */
@@ -18,7 +18,7 @@ use Somoscuatro\Starter_Theme\Timber;
 use Somoscuatro\Starter_Theme\Translation;
 
 /**
- * List of classes with hooks
+ * List of Classes with Hooks
  */
 return array(
 	Theme::class,

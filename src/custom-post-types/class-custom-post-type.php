@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Post related functionality.
+ * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Custom_Post_Type Class.
  *
  * @package sc-starter-theme
  */
@@ -10,33 +10,33 @@ declare(strict_types=1);
 namespace Somoscuatro\Starter_Theme\Custom_Post_Types;
 
 /**
- * Custom Post related functionality.
+ * Custom Post Related Functionality.
  */
 class Custom_Post_Type {
 
 	/**
-	 * Custom Post Type singular name.
+	 * Custom Post Type Singular Name.
 	 *
 	 * @var string
 	 */
 	protected string $singular_name = '';
 
 	/**
-	 * Custom Post Type plural name.
+	 * Custom Post Type Plural Name.
 	 *
 	 * @var string
 	 */
 	protected string $plural_name = '';
 
 	/**
-	 * Custom Post Type default arguments.
+	 * Custom Post Type Default Arguments.
 	 *
 	 * @var array
 	 */
 	protected array $args = array();
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 */
 	public function __construct() {
 		$this->args = array(

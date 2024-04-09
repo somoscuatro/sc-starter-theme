@@ -1,6 +1,6 @@
 <?php
 /**
- * Translations management class.
+ * Contains Somoscuatro\Starter_Theme\Translation Class.
  *
  * @package sc-starter-theme
  */
@@ -13,14 +13,14 @@ use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Helpers\Filesystem;
 
 /**
- * Translations management class.
+ * Translations Management Class.
  */
 class Translation {
 
 	use Filesystem;
 
 	/**
-	 * Loads the theme translation domain.
+	 * Loads the Theme Translation Domain.
 	 */
 	#[Action( 'after_setup_theme' )]
 	public function load_text_domain(): void {

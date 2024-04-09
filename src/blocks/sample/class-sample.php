@@ -1,6 +1,6 @@
 <?php
 /**
- * Block's main functionality methods.
+ * Contains Somoscuatro\Starter_Theme\BLocks\Sample\Sample Class.
  *
  * @package sc-starter-theme
  */
@@ -12,21 +12,21 @@ namespace Somoscuatro\Starter_Theme\Blocks\Sample;
 use Somoscuatro\Starter_Theme\Blocks\Block;
 
 /**
- * Block main functionality.
+ * Block Main Functionality.
  */
 class Sample extends Block {
 
 	/**
-	 * The prefix used for ACF Blocks.
+	 * The Prefix Used for ACF Blocks.
 	 *
 	 * @var string
 	 */
 	public static $acf_block_prefix = 'block_sample';
 
 	/**
-	 * Gets the ACF Block fields.
+	 * Gets the ACF Block Fields.
 	 *
-	 * @return array The ACF Block fields.
+	 * @return array The ACF Block Fields.
 	 */
 	public function get_acf_fields(): array {
 		return array(

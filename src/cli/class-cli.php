@@ -1,6 +1,6 @@
 <?php
 /**
- * CLI management class.
+ * Contains Somoscuatro\Starter_Theme\CLI\CLI Class.
  *
  * @package sc-starter-theme
  */
@@ -12,7 +12,7 @@ namespace Somoscuatro\Starter_Theme\CLI;
 use DI\Container;
 
 /**
- * CLI management class.
+ * CLI Management Class.
  */
 class CLI {
 
@@ -32,7 +32,7 @@ class CLI {
 		$this->container = $container;
 	}
 	/**
-	 * Registers CLI commands.
+	 * Registers CLI Commands.
 	 */
 	public function register_commands(): void {
 		// phpcs:ignore Generic.Commenting.DocComment.MissingShort

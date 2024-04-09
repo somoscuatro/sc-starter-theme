@@ -1,6 +1,6 @@
 <?php
 /**
- * Gutenberg customization.
+ * Contains Somoscuatro\Starter_Theme\Gutenberg Class.
  *
  * @package sc-starter-theme
  */
@@ -15,15 +15,15 @@ use Somoscuatro\Starter_Theme\Attributes\Filter;
 use WP_Block_Editor_Context;
 
 /**
- * Gutenberg customization.
+ * Gutenberg Customization.
  */
 class Gutenberg {
 
 	/**
-	 * Registers Gutenberg custom category.
+	 * Registers Gutenberg Custom Category.
 	 *
-	 * @param array[]                 $block_categories     Array of categories for block types.
-	 * @param WP_Block_Editor_Context $block_editor_context The current block editor context.
+	 * @param array[]                 $block_categories     Array of Categories for Block Types.
+	 * @param WP_Block_Editor_Context $block_editor_context The Current Block Editor Context.
 	 */
 	#[Filter( 'block_categories_all', accepted_args: 2 )]
 	public function add_custom_block_category( array $block_categories, WP_Block_Editor_Context $block_editor_context ): array {
@@ -43,9 +43,9 @@ class Gutenberg {
 	}
 
 	/**
-	 * Removes unwanted default WordPress Gutenberg block types.
+	 * Removes Unwanted Default WordPress Gutenberg Block Types.
 	 *
-	 * @return array The modified allowed block types.
+	 * @return array The Modified Allowed Block Types.
 	 */
 	#[Filter( 'allowed_block_types_all', accepted_args: 0 )]
 	public function allowed_block_types(): array {
@@ -62,7 +62,7 @@ class Gutenberg {
 	}
 
 	/**
-	 * Removes default Gutenberg blocks assets.
+	 * Removes Default Gutenberg Blocks Assets.
 	 *
 	 * Because we are using Tailwind CSS to style blocks (including default
 	 * WordPress blocks), we need to remove the default WordPress assets for

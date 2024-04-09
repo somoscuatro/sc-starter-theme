@@ -1,6 +1,6 @@
 <?php
 /**
- * Assets management class.
+ * Contains Somoscuatro\Starter_Theme\Asset Class.
  *
  * @package sc-starter-theme
  */
@@ -13,7 +13,7 @@ use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Helpers\Filesystem;
 
 /**
- * Assets management class.
+ * Assets Management Class.
  */
 class Asset {
 
@@ -27,7 +27,7 @@ class Asset {
 	protected $theme;
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
 	 * @param Theme $theme The Theme Class.
 	 */
@@ -36,28 +36,28 @@ class Asset {
 	}
 
 	/**
-	 * Enqueues frontend theme styles and scripts.
+	 * Enqueues Frontend Theme Styles and Scripts.
 	 */
 	#[Action( 'wp_enqueue_scripts' )]
 	public function enqueue_assets(): void {
 		$theme_prefix = $this->theme->get_prefix();
 
-		// Custom fonts.
+		// Custom Fonts.
 		wp_enqueue_style( $theme_prefix . '-fonts-preload', $this->get_base_url() . '/dist/styles/fonts.css', false, $this->get_filemtime( 'styles/fonts.css' ) );
 
-		// Theme styles.
+		// Theme Styles.
 		wp_enqueue_style( $theme_prefix . '-main-styles', $this->get_base_url() . '/dist/styles/main.css', array( $theme_prefix . '-fonts-preload' ), $this->get_filemtime( 'styles/main.css' ) );
 	}
 
 	/**
-	 * Enqueues editor theme styles and scripts.
+	 * Enqueues Editor Theme Styles and Scripts.
 	 */
 	#[Action( 'admin_enqueue_scripts' )]
 	public function enqueue_admin_assets() {
 	}
 
 	/**
-	 * Enqueues wp-login theme styles and scripts.
+	 * Enqueues wp-login Theme Styles and Scripts.
 	 */
 	#[Action( 'login_enqueue_scripts' )]
 	public function enqueue_login_assets() {

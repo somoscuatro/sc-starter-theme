@@ -1,6 +1,6 @@
 <?php
 /**
- * Hooks management class.
+ * Contains Somoscuatro\Starter_Theme\Attributes\Hook Class.
  *
  * @package sc-starter-theme
  */
@@ -13,7 +13,7 @@ use ReflectionAttribute;
 use ReflectionClass;
 
 /**
- * Hooks management class.
+ * Hooks Management Class.
  */
 class Hook {
 
@@ -25,16 +25,16 @@ class Hook {
 	private $container;
 
 	/**
-	 * The names of the classes that contain hooks handlers.
+	 * The Names of the Classes That Contain Hooks Handlers.
 	 *
 	 * @var array
 	 */
 	private array $hooked_classes = array();
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
-	 * @param Container $container The PHP DI container.
+	 * @param Container $container The PHP DI Container.
 	 */
 	public function __construct( Container $container ) {
 		$this->container      = $container;
@@ -42,7 +42,7 @@ class Hook {
 	}
 
 	/**
-	 * Registers hooks.
+	 * Registers Hooks.
 	 */
 	public function register_hooks(): void {
 		$instances = array();
@@ -54,12 +54,12 @@ class Hook {
 				$attributes = $method->getAttributes( Filter::class, ReflectionAttribute::IS_INSTANCEOF );
 
 				foreach ( $attributes as $attribute ) {
-					// Maybe instantiate class.
+					// Maybe Instantiate Class.
 					if ( ! array_key_exists( $class_name, $instances ) ) {
 						$instances[ $class_name ] = $this->container->get( $class_name );
 					}
 
-					// Instantiate hooks.
+					// Instantiate Hooks.
 					$hook_class = $attribute->newInstance();
 					$hook_class->register(
 						array(

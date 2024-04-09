@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Post Type Loader.
+ * Contains Somoscuatro\Starter_Theme\Custom_Post_Types\Loader Class.
  *
  * @package sc-starter-theme
  */
@@ -24,7 +24,7 @@ class Loader {
 	protected $container;
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
 	 * @param Container $container The PHP DI Container.
 	 */

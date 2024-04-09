@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme's main functionality methods.
+ * Contains Somoscuatro\Starter_Theme\Theme Class.
  *
  * @package sc-starter-theme
  */
@@ -17,44 +17,44 @@ use Somoscuatro\Starter_Theme\Custom_Post_Types\Loader as CustomPostTypesLoader;
 use Somoscuatro\Starter_Theme\Custom_Taxonomies\Loader as CustomTaxonomiesLoader;
 
 /**
- * Main theme class.
+ * Main Theme Class.
  */
 class Theme {
 
 	/**
-	 * The Custom_Post_Types\Loader instance.
+	 * The Custom_Post_Types\Loader Instance.
 	 *
 	 * @var CustomPostTypesLoader
 	 */
 	private $custom_post_types_loader;
 
 	/**
-	 * The Custom_Taxonomies\Loader instance.
+	 * The Custom_Taxonomies\Loader Instance.
 	 *
 	 * @var CustomTaxonomiesLoader
 	 */
 	private $custom_taxonomies_loader;
 
 	/**
-	 * The Blocks\Loader instance.
+	 * The Blocks\Loader Instance.
 	 *
 	 * @var BlocksLoader
 	 */
 	private $blocks_loader;
 
 	/**
-	 * Theme naming prefix.
+	 * Theme Naming Prefix.
 	 *
 	 * @var string
 	 */
 	private $prefix = 'starter_theme';
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
-	 * @param CustomPostTypesLoader  $custom_post_types_loader Custom_Post_Types\Loader instance.
-	 * @param CustomTaxonomiesLoader $custom_taxonomies_loader Custom_Taxonomies\Loader instance.
-	 * @param BlocksLoader           $blocks_loader Blocks\Loader instance.
+	 * @param CustomPostTypesLoader  $custom_post_types_loader Custom_Post_Types\Loader Instance.
+	 * @param CustomTaxonomiesLoader $custom_taxonomies_loader Custom_Taxonomies\Loader Instance.
+	 * @param BlocksLoader           $blocks_loader Blocks\Loader Instance.
 	 */
 	public function __construct(
 		CustomPostTypesLoader $custom_post_types_loader,
@@ -67,7 +67,7 @@ class Theme {
 	}
 
 	/**
-	 * Initialisation method.
+	 * Initialization method.
 	 */
 	#[Action( 'init' )]
 	public function init(): void {
@@ -75,7 +75,7 @@ class Theme {
 	}
 
 	/**
-	 * Registers theme support for additional features.
+	 * Registers Theme Support for Additional Features.
 	 */
 	#[Action( 'after_setup_theme' )]
 	public function theme_support(): void {
@@ -87,7 +87,7 @@ class Theme {
 	}
 
 	/**
-	 * Displays missing plugins warning.
+	 * Displays Missing Plugins Warning.
 	 */
 	#[Action( 'admin_notices' )]
 	public function display_missing_plugins_warning(): void {
@@ -111,11 +111,11 @@ class Theme {
 	}
 
 	/**
-	 * Adds page slug to body classes.
+	 * Adds Page Slug to Body Classes.
 	 *
-	 * @param array $classes The body classes.
+	 * @param array $classes The Body Classes.
 	 *
-	 * @return array The modified body classes.
+	 * @return array The Modified Body Classes.
 	 */
 	#[Filter( 'body_class' )]
 	public function body_class( array $classes ): array {
@@ -138,9 +138,9 @@ class Theme {
 	}
 
 	/**
-	 * Returns the theme prefix.
+	 * Returns the Theme Prefix.
 	 *
-	 * @return string Theme the prefix.
+	 * @return string The Theme Prefix.
 	 */
 	public function get_prefix(): string {
 		return $this->prefix;

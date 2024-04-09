@@ -1,6 +1,6 @@
 <?php
 /**
- * Google Tag Manager custom functionality.
+ * Contains Somoscuatro\Starter_Theme\GTM Class.
  *
  * @package sc-starter-theme
  */
@@ -12,12 +12,12 @@ namespace Somoscuatro\Starter_Theme;
 use Somoscuatro\Starter_Theme\Attributes\Action;
 
 /**
- * Google Tag Manager custom functionality.
+ * Google Tag Manager Custom Functionality.
  */
 class GTM {
 
 	/**
-	 * Adds Google Tag Manager head script.
+	 * Adds Google Tag Manager Head Script.
 	 */
 	#[Action( 'wp_head' )]
 	public function google_tag_manager_head(): void {
@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	}
 
 	/**
-	 * Adds Google Tag Manager body script.
+	 * Adds Google Tag Manager Body Script.
 	 */
 	#[Action( 'wp_body_open' )]
 	public function google_tag_manager_body(): void {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Taxonomy Loader.
+ * Contains Somoscuatro\Starter_Theme\Custom_Taxonomies\Loader Class.
  *
  * @package sc-starter-theme
  */
@@ -24,7 +24,7 @@ class Loader {
 	protected $container;
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
 	 * @param Container $container The PHP DI Container.
 	 */

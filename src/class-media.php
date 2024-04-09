@@ -1,6 +1,6 @@
 <?php
 /**
- * Media management class.
+ * Contains Somoscuatro\Starter_Theme\Media Class.
  *
  * @package sc-starter-theme
  */
@@ -13,16 +13,16 @@ use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Attributes\Filter;
 
 /**
- * Media management class.
+ * Media Management Class.
  */
 class Media {
 
 	/**
-	 * Allows SVG images in media uploader.
+	 * Allows SVG Images in Media Uploader.
 	 *
-	 * @param array $mimes The supported mime types.
+	 * @param array $mimes The Supported Mime Types.
 	 *
-	 * @return array The modified mime types.
+	 * @return array The Modified Mime Types.
 	 */
 	#[Filter( 'upload_mimes' )]
 	public function add_svg_support( array $mimes ): array {
@@ -31,11 +31,11 @@ class Media {
 	}
 
 	/**
-	 * Disables WordPress default image sizes.
+	 * Disables WordPress Default Image Sizes.
 	 *
-	 * @param array $sizes The WordPress image sizes.
+	 * @param array $sizes The WordPress Image Sizes.
 	 *
-	 * @return array The modified sizes.
+	 * @return array The Modified Sizes.
 	 */
 	#[Filter( 'intermediate_image_sizes' )]
 	public function disable_wp_default_image_sizes( array $sizes ): array {
@@ -51,7 +51,7 @@ class Media {
 	}
 
 	/**
-	 * Registers custom images sizes.
+	 * Registers Custom Images Sizes.
 	 */
 	#[Action( 'init' )]
 	public function register_image_sizes(): void {

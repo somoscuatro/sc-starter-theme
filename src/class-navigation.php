@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress custom navigation functionality.
+ * Contains Somoscuatro\Starter_Theme\Navigation Class.
  *
  * @package sc-starter-theme
  */
@@ -12,12 +12,12 @@ namespace Somoscuatro\Starter_Theme;
 use Somoscuatro\Starter_Theme\Attributes\Action;
 
 /**
- * WordPress custom navigation functionality.
+ * WordPress Custom Navigation Functionality.
  */
 class Navigation {
 
 	/**
-	 * Register navigation menus.
+	 * Register Navigation Menus.
 	 */
 	#[Action( 'after_setup_theme' )]
 	public function register_nav_menus() {

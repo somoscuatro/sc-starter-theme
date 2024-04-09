@@ -1,6 +1,6 @@
 <?php
 /**
- * Timber management class.
+ * Contains Somoscuatro\Starter_Theme\Timber Class.
  *
  * @package sc-starter-theme
  */
@@ -17,14 +17,14 @@ use Twig\TwigFunction;
 use Twig\Environment as TwigEnvironment;
 
 /**
- * Timber management class.
+ * Timber Management Class.
  */
 class Timber {
 
 	/**
-	 * Timber initialization.
+	 * Timber Initialization.
 	 *
-	 * @throws \Exception If Timber class does not exist.
+	 * @throws \Exception If Timber Class Does Not Exist.
 	 */
 	#[Action( 'after_setup_theme', 9 )]
 	public function init(): void {
@@ -42,11 +42,11 @@ class Timber {
 	}
 
 	/**
-	 * Adds additional variables to global context.
+	 * Adds Additional Variables to Global Context.
 	 *
-	 * @param array $context Timber context.
+	 * @param array $context Timber Context.
 	 *
-	 * @return array Global context data.
+	 * @return array Global Context Data.
 	 */
 	#[Filter( 'timber/context' )]
 	public function add_to_global_context( array $context ): array {
@@ -67,7 +67,7 @@ class Timber {
 	}
 
 	/**
-	 * Returns Timber context.
+	 * Returns Timber Context.
 	 *
 	 * @return array
 	 */
@@ -76,10 +76,10 @@ class Timber {
 	}
 
 	/**
-	 * Renders a given template.
+	 * Renders a Given Template.
 	 *
-	 * @param string $template Template path.
-	 * @param array  $context  Context data.
+	 * @param string $template Template Path.
+	 * @param array  $context  Context Data.
 	 */
 	public function render(
 		string $template,
@@ -89,7 +89,7 @@ class Timber {
 	}
 
 	/**
-	 * Adds registered menus to Timber global context.
+	 * Adds Registered Menus to Timber Global Context.
 	 *
 	 * As documented in
 	 * https://timber.github.io/docs/v2/guides/menus/#set-up-all-menus-globally
@@ -98,9 +98,9 @@ class Timber {
 	 * not set (always false) and WordPress current item classes (e.g.
 	 * current-menu-item) are not added.
 	 *
-	 * @param array $context The Timber global context.
+	 * @param array $context The Timber Global Context.
 	 *
-	 * @return array The updated Timber global context.
+	 * @return array The Updated Timber Global Context.
 	 */
 	public function get_menus( array $context ): array {
 		foreach ( array_keys( get_registered_nav_menus() ) as $location ) {
@@ -115,11 +115,11 @@ class Timber {
 	}
 
 	/**
-	 * Adds custom functions to Twig.
+	 * Adds Custom Functions to Twig.
 	 *
 	 * @param TwigEnvironment $twig The Twig Environment.
 	 *
-	 * @return TwigEnvironment The modified Twig Environment.
+	 * @return TwigEnvironment The Modified Twig Environment.
 	 */
 	#[Filter( 'timber/twig' )]
 	public function extend_timber_functions( TwigEnvironment $twig ): TwigEnvironment {
@@ -139,32 +139,32 @@ class Timber {
 	}
 
 	/**
-	 * Enqueue block scripts.
+	 * Enqueue Block Scripts.
 	 *
-	 * @param string $handle The script handle.
+	 * @param string $handle The Script Handle.
 	 */
 	public function enqueue_script( string $handle ): void {
 		wp_enqueue_script( $handle );
 	}
 
 	/**
-	 * Get static asset URL.
+	 * Get Static Asset URL.
 	 *
-	 * @param string $rel_file_path The asset file path relative to the theme dir.
+	 * @param string $rel_file_path The Asset File Path Relative to the Theme Dir.
 	 *
-	 * @return string The asset URL.
+	 * @return string The Asset URL.
 	 */
 	public function get_static_asset( string $rel_file_path ): string {
 		return esc_url( get_stylesheet_directory_uri() ) . "/$rel_file_path";
 	}
 
 	/**
-	 * Gets images source sets.
+	 * Gets Images Source Sets.
 	 *
-	 * @param array        $sizes The WordPress image sizes.
-	 * @param array|string $allowed_sizes The image sizes to generate for this particular image.
+	 * @param array        $sizes The WordPress Image Sizes.
+	 * @param array|string $allowed_sizes The Image Sizes to Generate for This Particular Image.
 	 *
-	 * @return array The image source set.
+	 * @return array The Image Source Set.
 	 */
 	public function get_image_srcset( array $sizes, array|string $allowed_sizes = array( 'xs', 'sm', 'md', 'lg', 'xl' ) ): array {
 		$srcset = array();

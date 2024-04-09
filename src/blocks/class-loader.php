@@ -1,6 +1,6 @@
 <?php
 /**
- * Gutenberg Blocks loader.
+ * Contains Somoscuatro\Starter_Theme\Blocks\Loader Class.
  *
  * @package sc-starter-theme
  */
@@ -24,7 +24,7 @@ class Loader {
 	private $container;
 
 	/**
-	 * Class constructor.
+	 * Class Constructor.
 	 *
 	 * @param Container $container The PHP DI Container.
 	 */
