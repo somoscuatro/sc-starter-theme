@@ -22,7 +22,7 @@ class Customizer {
 	 * @param \WP_Customize_Manager $wp_customize WP_customize_manager Instance.
 	 */
 	#[Action( 'customize_register' )]
-	public function add_customizer_gtm_controls( \WP_Customize_Manager $wp_customize ) {
+	public function add_customizer_gtm_controls( \WP_Customize_Manager $wp_customize ): void {
 		// Section.
 		$wp_customize->add_section(
 			'gtm',

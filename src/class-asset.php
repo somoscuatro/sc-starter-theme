@@ -53,13 +53,13 @@ class Asset {
 	 * Enqueues Editor Theme Styles and Scripts.
 	 */
 	#[Action( 'admin_enqueue_scripts' )]
-	public function enqueue_admin_assets() {
+	public function enqueue_admin_assets(): void {
 	}
 
 	/**
 	 * Enqueues wp-login Theme Styles and Scripts.
 	 */
 	#[Action( 'login_enqueue_scripts' )]
-	public function enqueue_login_assets() {
+	public function enqueue_login_assets(): void {
 	}
 }
