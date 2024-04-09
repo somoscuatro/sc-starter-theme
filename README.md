@@ -601,13 +601,6 @@ Additionally, we use [PHPStan](https://phpstan.org/) for static analysis,
 which significantly improves our code quality by detecting bugs and potential
 issues before runtime.
 
-## Future Functionality
-
-In our roadmap for the theme's evolution, we plan to introduce the following
-features:
-
-- TypeScript Adoption
-
 ## How to Contribute
 
 Any kind of contribution is very welcome!

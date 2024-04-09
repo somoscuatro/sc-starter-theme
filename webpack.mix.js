@@ -46,13 +46,22 @@ if (fs.existsSync(scriptsVendorDir)) {
 	});
 }
 
-if (fs.existsSync(scriptsDir)) {
-	discover(['src/blocks', scriptsDir], '.js', ['vendor'])
-		.filter((file) => !file.endsWith('stories.js')) // Exclude files ending with 'stories.js'
-		.forEach((file) => {
-			mix.js(file, 'scripts');
-		});
-}
+discover(['src/blocks', scriptsDir], '.ts').forEach((file) => {
+	mix.js(file, 'scripts').webpackConfig({
+		module: {
+			rules: [
+				{
+					test: /\.ts?$/,
+					loader: 'ts-loader',
+					exclude: /node_modules/,
+				},
+			],
+		},
+		resolve: {
+			extensions: ['.js', '.ts'],
+		},
+	});
+});
 
 if (fs.existsSync(stylesDir)) {
 	discover(['assets/styles'], '.css').forEach((file) => {
