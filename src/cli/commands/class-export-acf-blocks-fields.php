@@ -11,10 +11,28 @@ namespace Somoscuatro\Starter_Theme\CLI\Commands;
 
 use Somoscuatro\Starter_Theme\CLI\CLI_Command;
 
+use DI\Container;
+
 /**
  * WP CLI Command to export ACF Fields Blocks to JSON file.
  */
-class Export_Acf_Blocks_Fields extends CLI_Command {
+class Export_ACF_Blocks_Fields extends CLI_Command {
+
+	/**
+	 * The PHP DI Container.
+	 *
+	 * @var Container
+	 */
+	protected static $container;
+
+	/**
+	 * Class Constructor.
+	 *
+	 * @param Container $container The PHP DI Container.
+	 */
+	public function __construct( Container $container ) {
+		$this->container = $container;
+	}
 
 	/**
 	 * Exports ACF Fields for Gutenberg Blocks.
@@ -71,7 +89,7 @@ class Export_Acf_Blocks_Fields extends CLI_Command {
 
 		$json = '';
 		if ( method_exists( $namespaced_block_class, 'get_acf_fields' ) ) {
-			$json = wp_json_encode( ( new $namespaced_block_class() )->get_acf_fields() );
+			$json = wp_json_encode( ( new $namespaced_block_class( $this->container ) )->get_acf_fields() );
 		}
 
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents,WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents

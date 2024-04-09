@@ -9,19 +9,28 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme\Blocks;
 
-use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
+use Somoscuatro\Starter_Theme\Timber;
+
+use DI\Container;
 
 /**
  * Class for ACF Gutenberg Blocks.
  */
-class Block {
+class Block implements Block_Interface {
 
 	/**
-	 * Dependencies container.
+	 * The PHP DI Container.
 	 *
-	 * @var Dependencies
+	 * @var Container
 	 */
-	protected static $dependencies;
+	protected static $container;
+
+	/**
+	 * The Timber class.
+	 *
+	 * @var Timber
+	 */
+	protected static $timber;
 
 	/**
 	 * The Timber context.
@@ -40,15 +49,11 @@ class Block {
 	/**
 	 * Class constructor.
 	 *
-	 * We set the constructor as final to prevent be overridden by child classes.
-	 * This is necessary to ensure safe usage of new static().
-	 *
-	 * @see https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static
-	 *
-	 * @param Dependencies $dependencies Dependencies container.
+	 * @param Container $container The PHP DI Container.
 	 */
-	final public function __construct( Dependencies $dependencies ) {
-		static::$dependencies = $dependencies;
+	public function __construct( Container $container ) {
+		static::$container = $container;
+		static::$timber    = $container->get( 'Somoscuatro\Starter_Theme\Timber' );
 	}
 
 	/**
@@ -67,9 +72,7 @@ class Block {
 	 * @see Somoscuatro\Theme\Attributes\Hook::register_hooks()
 	 */
 	public function init() {
-		$timber = static::$dependencies->get( 'Timber' );
-
-		$this->context = $timber->context();
+		$this->context = static::$timber->context();
 		$this->register_acf_block();
 		$this->register_assets();
 	}
@@ -114,7 +117,7 @@ class Block {
 	 * @param boolean $is_preview True if in preview mode.
 	 */
 	public static function render_callback( array $block, string $content = '', $is_preview = false ) {
-		( new static( static::$dependencies ) )->render( $block, $content, $is_preview );
+		( new static( static::$container ) )->render( $block, $content, $is_preview );
 	}
 
 	/**
@@ -130,8 +133,7 @@ class Block {
 		$block_dirname       = strtolower( explode( '\\', $block['render_callback'] )[3] );
 		$block_template_path = __DIR__ . '/' . str_replace( '_', '-', $block_dirname ) . '/template.twig';
 
-		$timber = static::$dependencies->get( 'Timber' );
-		$timber->render( $block_template_path, $this->context );
+		static::$timber->render( $block_template_path, $this->context );
 	}
 
 	/**

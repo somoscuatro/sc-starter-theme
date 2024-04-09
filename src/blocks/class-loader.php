@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme\Blocks;
 
-use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
+use DI\Container;
 
 /**
  * Gutenberg Blocks loader.
@@ -17,19 +17,19 @@ use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Depend
 class Loader {
 
 	/**
-	 * Dependencies container.
+	 * The PHP DI Container.
 	 *
-	 * @var Dependencies
+	 * @var Container
 	 */
-	protected $dependencies;
+	private $container;
 
 	/**
 	 * Class constructor.
 	 *
-	 * @param Dependencies $dependencies Dependencies container.
+	 * @param Container $container The PHP DI Container.
 	 */
-	public function __construct( Dependencies $dependencies ) {
-		$this->dependencies = $dependencies;
+	public function __construct( Container $container ) {
+		$this->container = $container;
 	}
 
 	/**
@@ -51,7 +51,7 @@ class Loader {
 
 			$full_class_path = sprintf( __NAMESPACE__ . '\%s\%s', $class, $class );
 			if ( method_exists( $full_class_path, 'init' ) ) {
-				( new $full_class_path( $this->dependencies ) )->init();
+				( new $full_class_path( $this->container ) )->init();
 			}
 		}
 	}

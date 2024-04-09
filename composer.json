@@ -45,6 +45,7 @@
 		}
 	},
 	"require": {
-		"timber/timber": "^2.0"
+		"timber/timber": "^2.0",
+		"php-di/php-di": "^7.0"
 	}
 }

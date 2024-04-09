@@ -7,10 +7,10 @@
 
 namespace Somoscuatro\Starter_Theme\Attributes;
 
+use DI\Container;
+
 use ReflectionAttribute;
 use ReflectionClass;
-
-use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
 
 /**
  * Hooks management class.
@@ -18,11 +18,11 @@ use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Depend
 class Hook {
 
 	/**
-	 * Dependencies container.
+	 * The PHP DI Container.
 	 *
-	 * @var Dependencies
+	 * @var Container
 	 */
-	private $dependencies;
+	private $container;
 
 	/**
 	 * The names of the classes that contain hooks handlers.
@@ -34,10 +34,10 @@ class Hook {
 	/**
 	 * Class constructor.
 	 *
-	 * @param Dependencies $dependencies DI container.
+	 * @param Container $container The PHP DI container.
 	 */
-	public function __construct( Dependencies $dependencies ) {
-		$this->dependencies   = $dependencies;
+	public function __construct( Container $container ) {
+		$this->container      = $container;
 		$this->hooked_classes = require __DIR__ . '/hooked-classes.php';
 	}
 
@@ -56,7 +56,7 @@ class Hook {
 				foreach ( $attributes as $attribute ) {
 					// Maybe instantiate class.
 					if ( ! array_key_exists( $class_name, $instances ) ) {
-						$instances[ $class_name ] = new $class_name( $this->dependencies );
+						$instances[ $class_name ] = $this->container->get( $class_name );
 					}
 
 					// Instantiate hooks.

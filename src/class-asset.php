@@ -10,8 +10,6 @@ declare(strict_types=1);
 namespace Somoscuatro\Starter_Theme;
 
 use Somoscuatro\Starter_Theme\Attributes\Action;
-use Somoscuatro\Starter_Theme\Dependency_Injection\Container_Interface as Dependencies;
-
 use Somoscuatro\Starter_Theme\Helpers\Filesystem;
 
 /**
@@ -22,19 +20,19 @@ class Asset {
 	use Filesystem;
 
 	/**
-	 * Dependencies container.
+	 * The Theme Class.
 	 *
-	 * @var Dependencies
+	 * @var Theme
 	 */
-	protected $dependencies;
+	protected $theme;
 
 	/**
 	 * Class constructor.
 	 *
-	 * @param Dependencies $dependencies Dependencies container.
+	 * @param Theme $theme The Theme Class.
 	 */
-	public function __construct( Dependencies $dependencies ) {
-		$this->dependencies = $dependencies;
+	public function __construct( Theme $theme ) {
+		$this->theme = $theme;
 	}
 
 	/**
@@ -42,8 +40,7 @@ class Asset {
 	 */
 	#[Action( 'wp_enqueue_scripts' )]
 	public function enqueue_assets(): void {
-		$theme        = $this->dependencies->get( 'Theme' );
-		$theme_prefix = $theme->get_prefix();
+		$theme_prefix = $this->theme->get_prefix();
 
 		// Custom fonts.
 		wp_enqueue_style( $theme_prefix . '-fonts-preload', $this->get_base_url() . '/dist/styles/fonts.css', false, $this->get_filemtime( 'styles/fonts.css' ) );
