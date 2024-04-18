@@ -9,7 +9,8 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme\Blocks;
 
-use DI\Container;
+use DI\Attribute\Inject;
+use Somoscuatro\Starter_Theme\Timber;
 
 /**
  * Gutenberg Blocks loader.
@@ -19,18 +20,11 @@ class Loader {
 	/**
 	 * The PHP DI Container.
 	 *
-	 * @var Container
+	 * @var Timber
 	 */
-	private $container;
+	#[Inject]
+	private Timber $timber;
 
-	/**
-	 * Class Constructor.
-	 *
-	 * @param Container $container The PHP DI Container.
-	 */
-	public function __construct( Container $container ) {
-		$this->container = $container;
-	}
 
 	/**
 	 * Loads custom Gutenberg blocks.
@@ -51,7 +45,7 @@ class Loader {
 
 			$full_class_path = sprintf( __NAMESPACE__ . '\%s\%s', $class, $class );
 			if ( method_exists( $full_class_path, 'init' ) ) {
-				( new $full_class_path( $this->container ) )->init();
+				( new $full_class_path( $this->timber ) )->init();
 			}
 		}
 	}

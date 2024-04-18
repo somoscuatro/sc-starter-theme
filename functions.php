@@ -10,7 +10,7 @@ declare(strict_types=1);
 use Somoscuatro\Starter_Theme\CLI\CLI;
 use Somoscuatro\Starter_Theme\Attributes\Hook;
 
-use DI\Container;
+use DI\ContainerBuilder;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	// phpcs:ignore WordPress.Security.ValidatedSanitizedInput
@@ -22,7 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once __DIR__ . '/autoload.php';
 
 // Setup Dependencies.
-$container = new Container();
+$builder = new ContainerBuilder();
+$builder->useAttributes( true );
+$container = $builder->build();
 
 // Register WordPress Hooks.
 ( new Hook( $container ) )->register_hooks();

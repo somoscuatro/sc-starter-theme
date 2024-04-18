@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme;
 
+use DI\Attribute\Inject;
 use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Helpers\Filesystem;
 
@@ -24,16 +25,8 @@ class Asset {
 	 *
 	 * @var Theme
 	 */
-	protected $theme;
-
-	/**
-	 * Class Constructor.
-	 *
-	 * @param Theme $theme The Theme Class.
-	 */
-	public function __construct( Theme $theme ) {
-		$this->theme = $theme;
-	}
+	#[Inject]
+	protected Theme $theme;
 
 	/**
 	 * Enqueues Frontend Theme Styles and Scripts.

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme\Blocks;
 
-use DI\Container;
+use Somoscuatro\Starter_Theme\Timber;
 
 /**
  * Interface for ACF Gutenberg Blocks.
@@ -25,7 +25,7 @@ interface Block_Interface {
 	/**
 	 * Class Constructor.
 	 *
-	 * @param Container $container The PHP DI container.
+	 * @param Timber $timber The Timber Class.
 	 */
-	public function __construct( Container $container );
+	public function __construct( Timber $timber );
 }
