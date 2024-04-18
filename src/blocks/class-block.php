@@ -11,19 +11,11 @@ namespace Somoscuatro\Starter_Theme\Blocks;
 
 use Somoscuatro\Starter_Theme\Timber;
 
-use DI\Container;
-
 /**
  * Class for ACF Gutenberg Blocks.
  */
 class Block implements Block_Interface {
 
-	/**
-	 * The PHP DI Container.
-	 *
-	 * @var Container
-	 */
-	protected static $container;
 
 	/**
 	 * The Timber Class.
@@ -49,11 +41,10 @@ class Block implements Block_Interface {
 	/**
 	 * Class Constructor.
 	 *
-	 * @param Container $container The PHP DI Container.
+	 * @param Timber $timber The Timber Class.
 	 */
-	public function __construct( Container $container ) {
-		static::$container = $container;
-		static::$timber    = $container->get( 'Somoscuatro\Starter_Theme\Timber' );
+	public function __construct( Timber $timber ) {
+		static::$timber = $timber;
 	}
 
 	/**
@@ -112,19 +103,19 @@ class Block implements Block_Interface {
 	 * the trick because the block name we get won't come from the blocks
 	 * extending this class.
 	 *
-	 * @param array   $block The Gutenberg block.
-	 * @param string  $content The content of the block.
+	 * @param array   $block      The Gutenberg block.
+	 * @param string  $content    The content of the block.
 	 * @param boolean $is_preview True if in preview mode.
 	 */
 	public static function render_callback( array $block, string $content = '', $is_preview = false ) {
-		( new static( static::$container ) )->render( $block, $content, $is_preview );
+		( new static( static::$timber ) )->render( $block, $content, $is_preview );
 	}
 
 	/**
 	 * Renders Block Twig Template.
 	 *
-	 * @param array   $block The Gutenberg block.
-	 * @param string  $content The content of the block.
+	 * @param array   $block      The Gutenberg block.
+	 * @param string  $content    The content of the block.
 	 * @param boolean $is_preview True if in preview mode.
 	 */
 	public function render( array $block, string $content = '', $is_preview = false ) {
@@ -139,8 +130,8 @@ class Block implements Block_Interface {
 	/**
 	 * Sets Block Context.
 	 *
-	 * @param array   $context The Timber context.
-	 * @param array   $block The Gutenberg block.
+	 * @param array   $context    The Timber context.
+	 * @param array   $block      The Gutenberg block.
 	 * @param boolean $is_preview True if in preview mode.
 	 *
 	 * @return array The modified Timber context.
@@ -179,8 +170,8 @@ class Block implements Block_Interface {
 	 * Adds ACF Fields to Timber Context.
 	 *
 	 * @param string $block_prefix The ACF Block Prefix.
-	 * @param array  $context The Timber Context.
-	 * @param array  $fields The ACF Fields.
+	 * @param array  $context      The Timber Context.
+	 * @param array  $fields       The ACF Fields.
 	 *
 	 * @return array The Timber Context with ACF Fields.
 	 */

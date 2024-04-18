@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aefaa29247827103acdb5c81a7fe2296",
+    "content-hash": "83b3f554841516890078df1b70016a04",
     "packages": [
         {
             "name": "composer/installers",
@@ -3418,6 +3418,61 @@
                 }
             ],
             "time": "2024-03-25T16:39:00+00:00"
+        },
+        {
+            "name": "zorac/phpstan-php-di",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zorac/phpstan-php-di.git",
+                "reference": "ee94768602fd74826722c95047e27c9134b6a1b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zorac/phpstan-php-di/zipball/ee94768602fd74826722c95047e27c9134b6a1b5",
+                "reference": "ee94768602fd74826722c95047e27c9134b6a1b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "php-di/php-di": "^7.0",
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zorac\\PhpStanPhpDI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Rigby-Jones",
+                    "email": "mark@rigby-jones.net",
+                    "homepage": "https://mark.rigby-jones.net/"
+                }
+            ],
+            "description": "Extansion adding support for PHP-DI to PHPStan.",
+            "homepage": "https://www.github.com/zorac/phpstan-php-di/",
+            "keywords": [
+                "PHPStan",
+                "php-di"
+            ],
+            "support": {
+                "issues": "https://github.com/zorac/phpstan-php-di/issues",
+                "source": "https://github.com/zorac/phpstan-php-di/tree/1.0.0"
+            },
+            "time": "2023-07-03T17:35:52+00:00"
         },
         {
             "name": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz/no-trailing-comma",

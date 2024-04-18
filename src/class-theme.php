@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace Somoscuatro\Starter_Theme;
 
+use DI\Attribute\Inject;
+
 use Somoscuatro\Starter_Theme\Attributes\Action;
 use Somoscuatro\Starter_Theme\Attributes\Filter;
 
@@ -26,21 +28,24 @@ class Theme {
 	 *
 	 * @var CustomPostTypesLoader
 	 */
-	private $custom_post_types_loader;
+	#[Inject]
+	private CustomPostTypesLoader $custom_post_types_loader;
 
 	/**
 	 * The Custom_Taxonomies\Loader Instance.
 	 *
 	 * @var CustomTaxonomiesLoader
 	 */
-	private $custom_taxonomies_loader;
+	#[Inject]
+	private CustomTaxonomiesLoader $custom_taxonomies_loader;
 
 	/**
 	 * The Blocks\Loader Instance.
 	 *
 	 * @var BlocksLoader
 	 */
-	private $blocks_loader;
+	#[Inject]
+	private BlocksLoader $blocks_loader;
 
 	/**
 	 * Theme Naming Prefix.
@@ -48,23 +53,6 @@ class Theme {
 	 * @var string
 	 */
 	private $prefix = 'starter_theme';
-
-	/**
-	 * Class Constructor.
-	 *
-	 * @param CustomPostTypesLoader  $custom_post_types_loader Custom_Post_Types\Loader Instance.
-	 * @param CustomTaxonomiesLoader $custom_taxonomies_loader Custom_Taxonomies\Loader Instance.
-	 * @param BlocksLoader           $blocks_loader Blocks\Loader Instance.
-	 */
-	public function __construct(
-		CustomPostTypesLoader $custom_post_types_loader,
-		CustomTaxonomiesLoader $custom_taxonomies_loader,
-		BlocksLoader $blocks_loader
-	) {
-		$this->custom_post_types_loader = $custom_post_types_loader;
-		$this->custom_taxonomies_loader = $custom_taxonomies_loader;
-		$this->blocks_loader            = $blocks_loader;
-	}
 
 	/**
 	 * Initialization method.
