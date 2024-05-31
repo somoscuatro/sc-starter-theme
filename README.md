@@ -23,6 +23,8 @@ facilitates a more interactive component library.
   and Timber.
 - Responsive Design: Achieve a consistent look across all devices with Tailwind
   CSS.
+- TypeScript Integration: Enhance code reliability and maintainability with
+  strong typing through TypeScript support.
 - Assets Compilation: Simplify your assets management with Laravel Mix's
   straightforward Webpack wrapper.
 - Storybook Integration: Develop and test UI components in isolation and
@@ -37,6 +39,7 @@ please ensure that your system meets the following requirements:
 - [Composer](https://getcomposer.org/): Version 2.7 or higher
 - [Node.js](https://nodejs.org/en): Version 18 or higher
 - [pnpm](https://pnpm.io/): Version 8.15 or higher
+- [GitHub CLI](https://cli.github.com/): Version 2.49 or higher (optional, necessary for [deployment scripts](#automated-deployment) to work)
 
 ### Quick Start with Docker
 
@@ -209,6 +212,8 @@ To use method attributes in your class methods, follow these steps:
 
     namespace Somoscuatro\Starter_Theme;
 
+    use Somoscuatro\Starter_Theme\Attributes\Action;
+
     class My_Beautiful_Class {
 
       #[Action('after_setup_theme')]
@@ -224,6 +229,8 @@ To use method attributes in your class methods, follow these steps:
     // src/class-my-beautiful-class.php
 
     namespace Somoscuatro\Starter_Theme;
+
+    use Somoscuatro\Starter_Theme\Attributes\Filter;
 
     class My_Beautiful_Class {
 
@@ -486,7 +493,7 @@ block's context along with any other settings from ACF. Here's a basic outline
 of how you can implement this method:
 
 ```php
-#[Filter('my_beautiful_theme_block_context'), accepted_args:2]
+#[Filter('my_beautiful_theme_block_context', accepted_args:2)]
 public static function set_custom_context( array $context, array $block ): array {
   // Ensure we modify context just for this specific block.
   if ( 'acf/my-beautiful-block' !== $block['name'] ) {
@@ -600,6 +607,13 @@ suite of code quality tools:
 Additionally, we use [PHPStan](https://phpstan.org/) for static analysis,
 which significantly improves our code quality by detecting bugs and potential
 issues before runtime.
+
+## Automated Deployment
+
+This theme features a `pnpm run deploy` command that automates version bumping,
+code pushing to GitHub, and release creation with the specified project version.
+Ensure you have the [GitHub CLI](https://cli.github.com/) installed to utilize
+this functionality.
 
 ## How to Contribute
 
