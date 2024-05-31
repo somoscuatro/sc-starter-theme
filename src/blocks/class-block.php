@@ -157,7 +157,7 @@ class Block implements Block_Interface {
 
 		$context['is_preview'] = $is_preview;
 
-		return $this->set_custom_context( $context );
+		return $this->set_custom_context( $context, $block );
 	}
 
 	/**
@@ -167,10 +167,11 @@ class Block implements Block_Interface {
 	 * Timber context.
 	 *
 	 * @param array $context The Timber Context.
+	 * @param array $block The Gutenberg block.
 	 *
 	 * @return array The Modified Timber Context.
 	 */
-	public function set_custom_context( array $context ): array {
+	public function set_custom_context( array $context, array $block ): array {
 		return $context;
 	}
 
