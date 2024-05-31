@@ -30,6 +30,8 @@ php_errorlog
 .idea/
 .well-known
 /tags
+.github/.version
+.github/.release-notes
 
 # Patch/diff artifacts
 *.diff
