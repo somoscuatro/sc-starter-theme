@@ -25,7 +25,7 @@
 		"lint-fix:js": "eslint ./**/*.js --fix && prettier --write ./**/*.js",
 		"sniff": "pnpm run sniff:php",
 		"sniff:php": "composer sniff",
-		"deploy": "bash bump-version.sh && git push origin main && git push origin --tags && bash create-release-notes.sh && gh release create \"$(<.github/.version)\" --title \"$(<.github/.version)\" --notes \"$(<.github/.release-notes)\"",
+		"deploy": "bash .github/scripts/bump-version.sh && git push origin main && git push origin --tags && bash .github/scripts/create-release-notes.sh && gh release create \"$(<.github/.version)\" --title \"$(<.github/.version)\" --notes \"$(<.github/.release-notes)\"",
 		"postinstall": "husky"
 	},
 	"lint-staged": {
