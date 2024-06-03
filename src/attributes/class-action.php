@@ -13,7 +13,7 @@ use Attribute;
  * WordPress Actions Management Class.
  */
 #[Attribute( Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE )]
-class Action extends Filter {
+class Action extends Hook {
 
 	/**
 	 * Register the Action Handler.
