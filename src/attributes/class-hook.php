@@ -22,7 +22,7 @@ class Hook {
 	 *
 	 * @var Container
 	 */
-	private $container;
+	private Container $container;
 
 	/**
 	 * The Names of the Classes That Contain Hooks Handlers.
