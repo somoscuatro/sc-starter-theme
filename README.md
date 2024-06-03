@@ -615,6 +615,10 @@ code pushing to GitHub, and release creation with the specified project version.
 Ensure you have the [GitHub CLI](https://cli.github.com/) installed to utilize
 this functionality.
 
+If your WordPress site is on WP Engine, you may consider using our GitHub Action
+for automated deployments:
+[action-deploy-to-wpengine](https://github.com/somoscuatro/action-deploy-to-wpengine)
+
 ## How to Contribute
 
 Any kind of contribution is very welcome!
