@@ -25,7 +25,6 @@ class Loader {
 	#[Inject]
 	private Timber $timber;
 
-
 	/**
 	 * Loads custom Gutenberg blocks.
 	 */

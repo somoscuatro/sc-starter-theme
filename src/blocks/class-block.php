@@ -16,7 +16,6 @@ use Somoscuatro\Starter_Theme\Timber;
  */
 class Block implements Block_Interface {
 
-
 	/**
 	 * The Timber Class.
 	 *

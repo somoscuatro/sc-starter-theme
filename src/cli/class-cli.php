@@ -31,6 +31,7 @@ class CLI {
 	public function __construct( Container $container ) {
 		$this->container = $container;
 	}
+
 	/**
 	 * Registers CLI Commands.
 	 */
