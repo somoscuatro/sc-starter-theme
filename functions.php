@@ -8,7 +8,7 @@
 declare(strict_types=1);
 
 use Somoscuatro\Starter_Theme\CLI\CLI;
-use Somoscuatro\Starter_Theme\Attributes\Hook;
+use Somoscuatro\Starter_Theme\Attributes\Hook_Manager;
 
 use DI\Container;
 
@@ -25,7 +25,7 @@ require_once __DIR__ . '/autoload.php';
 $container = new Container();
 
 // Register WordPress Hooks.
-( new Hook( $container ) )->register_hooks();
+( new Hook_Manager( $container ) )->register_hooks();
 
 // Register CLI Commands.
 ( new CLI( $container ) )->register_commands();

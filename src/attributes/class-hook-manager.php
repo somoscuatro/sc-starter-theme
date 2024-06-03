@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains Somoscuatro\Starter_Theme\Attributes\Hook Class.
+ * Contains Somoscuatro\Starter_Theme\Attributes\Hook_Manager Class.
  *
  * @package sc-starter-theme
  */
@@ -15,7 +15,7 @@ use ReflectionClass;
 /**
  * Hooks Management Class.
  */
-class Hook {
+class Hook_Manager {
 
 	/**
 	 * The PHP DI Container.
@@ -51,7 +51,7 @@ class Hook {
 			$reflection_class = new ReflectionClass( $class_name );
 
 			foreach ( $reflection_class->getMethods() as $method ) {
-				$attributes = $method->getAttributes( Filter::class, ReflectionAttribute::IS_INSTANCEOF );
+				$attributes = $method->getAttributes( Hook::class, ReflectionAttribute::IS_INSTANCEOF );
 
 				foreach ( $attributes as $attribute ) {
 					// Maybe Instantiate Class.
