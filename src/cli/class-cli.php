@@ -21,7 +21,7 @@ class CLI {
 	 *
 	 * @var Container
 	 */
-	private $container;
+	private Container $container;
 
 	/**
 	 * Class Constructor.
@@ -36,11 +36,28 @@ class CLI {
 	 * Registers CLI Commands.
 	 */
 	public function register_commands(): void {
-		// phpcs:ignore Generic.Commenting.DocComment.MissingShort
-		/** @disregard P1011 */
-		if ( defined( 'WP_CLI' ) && WP_CLI ) {
-			$command = $this->container->get( __NAMESPACE__ . '\Commands\Export_ACF_Blocks_Fields' );
-			\WP_CLI::add_command( 'export-acf-blocks-fields', $command );
+		foreach ( glob( __DIR__ . '/commands/*.php' ) as $command_file ) {
+			if ( ! is_file( $command_file ) ) {
+				continue;
+			}
+
+			$command_name = str_replace( 'class-', '', basename( $command_file, '.php' ) );
+
+			$class = implode(
+				'_',
+				array_map(
+					'ucwords',
+					explode( '-', $command_name )
+				)
+			);
+
+			$full_class_path = sprintf( __NAMESPACE__ . '\Commands\%s', $class );
+
+			// phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			/** @disregard P1011 */
+			if ( defined( 'WP_CLI' ) && WP_CLI ) {
+				\WP_CLI::add_command( $command_name, $this->container->get( $full_class_path ) );
+			}
 		}
 	}
 }
