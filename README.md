@@ -608,7 +608,7 @@ Our code standards adhere to the guidelines established by the WordPress
 community. To ensure these standards are consistently applied, we utilize a
 suite of code quality tools:
 
-- [PHPCS (PHP CodeSniffer)](https://github.com/squizlabs/PHP_CodeSniffer)
+- [PHPCS (PHP CodeSniffer)](https://github.com/PHPCSStandards/PHP_CodeSniffer)
 - [ESLint](https://eslint.org/)
 - [Stylelint](https://stylelint.io/)
 - [Prettier](https://prettier.io/)
